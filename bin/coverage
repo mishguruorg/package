@@ -3,5 +3,6 @@
 export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
+echo "> Starting NYC"
 $NYC $TEST_COMMAND
 $NYC report --reporter html

@@ -3,6 +3,6 @@
 export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
-echo + Wiping $DIST_PATH
+echo "> Cleaning '$DIST_PATH'"
 rm -rf $DIST_PATH
 mkdir -p $DIST_PATH

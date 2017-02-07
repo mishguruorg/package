@@ -3,8 +3,7 @@
 export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
-echo "+ Building from '$SRC_PATH'"
-echo "+ Writing to '$DIST_PATH'"
-echo "+ Extra options: '$@'"
+$CLEAN
 
+echo "> Building from '$SRC_PATH' to '$DIST_PATH'"
 $BABEL $SRC_PATH --out-dir $DIST_PATH "$@"
