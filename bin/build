@@ -3,7 +3,7 @@
 ./vars
 
 CLEAN=$NODE_MODULES/@mishguru/package/bin/clean
-BABEL=$NODE_MODULES/bable-cli/bin/babel.js
+BABEL=$NODE_MODULES/babel-cli/bin/babel.js
 
 echo + Building from "$SRC_PATH"
 echo + Writing to "$DIST_PATH"
