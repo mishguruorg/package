@@ -3,7 +3,9 @@
 export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
-exec $ESLINT
+$STANDARD $SRC_PATH $TESTS_PATH
+
+exec $ESLINT \
   -c $ESLINT_CONFIG \
   "$@" \
   $SRC_PATH $TESTS_PATH
