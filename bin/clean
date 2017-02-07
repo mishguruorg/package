@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+./vars
+
+echo + Wiping $DIST_PATH
+rm -rf $DIST_PATH
+mkdir -p $DIST_PATH

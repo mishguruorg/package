@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+./vars
+
+AVA=$NODE_MODULES/ava/cli.js
+
+exec $AVA
+  --source $TESTS_PATH \
+  "$@"

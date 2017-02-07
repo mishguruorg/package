@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+./vars
+
+NYC=$NODE_MODULES/nyc/bin/nyc.js
+TEST_CMD=$NODE_MODULES/@mishguru/package/bin/test
+
+$NYC $TEST_COMMAND
+$NYC report --reporter html

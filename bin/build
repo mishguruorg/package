@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+./vars
+
+CLEAN=$NODE_MODULES/@mishguru/package/bin/clean
+BABEL=$NODE_MODULES/bable-cli/bin/babel.js
+
+echo + Building from "$SRC_PATH"
+echo + Writing to "$DIST_PATH"
+echo + Extra options: "$@"
+
+$BABEL $SRC_PATH --out-dir $DIST_PATH "$@"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+./vars
+
+ESLINT=$NODE_MODULES/eslint/bin/eslint.js
+ESLINT_CONFIG=$NODE_MODULES/@mishguru/package/eslintrc
+
+exec $ESLINT
+  -c $ESLINT_CONFIG \
+  "$@" \
+  $SRC_PATH $TESTS_PATH
