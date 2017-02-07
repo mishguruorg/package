@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-./vars
-
-ESLINT=$NODE_MODULES/eslint/bin/eslint.js
-ESLINT_CONFIG=$NODE_MODULES/@mishguru/package/eslintrc
+export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
+source $NODE_MODULES/@mishguru/package/bin/vars
 
 exec $ESLINT
   -c $ESLINT_CONFIG \

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-./vars
-
-AVA=$NODE_MODULES/ava/cli.js
+export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
+source $NODE_MODULES/@mishguru/package/bin/vars
 
 exec $AVA
   --source $TESTS_PATH \
