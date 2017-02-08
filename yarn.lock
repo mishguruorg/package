@@ -1355,6 +1355,13 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-config-mishguru@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-mishguru/-/eslint-config-mishguru-1.0.0.tgz#e32254d597f5627088a449be77c2fc37eeb68ed0"
+  dependencies:
+    eslint-config-standard "^6.2.1"
+    eslint-config-standard-jsx "^3.2.0"
+
 eslint-config-standard-jsx@3.2.0, eslint-config-standard-jsx@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-3.2.0.tgz#c240e26ed919a11a42aa4de8059472b38268d620"

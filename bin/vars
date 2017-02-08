@@ -4,16 +4,10 @@ export SRC_PATH=${npm_packages_srcPath:-src}
 export DIST_PATH=${npm_packages_distPath:-dist}
 export TESTS_PATH=${npm_packages_testsPath:-tests}
 
-CLEAN=$NODE_MODULES/@mishguru/package/bin/clean
+PACKAGE=$NODE_MODULES/@mishguru/package/bin
+
 BABEL=$NODE_MODULES/babel-cli/bin/babel.js
-
 NYC=$NODE_MODULES/nyc/bin/nyc.js
-TEST_CMD=$NODE_MODULES/@mishguru/package/bin/test
-
 STANDARD=$NODE_MODULES/standard/bin/cmd.js
 ESLINT=$NODE_MODULES/eslint/bin/eslint.js
-ESLINT_CONFIG=$NODE_MODULES/@mishguru/package/eslintrc
-
 AVA=$NODE_MODULES/ava/cli.js
-
-

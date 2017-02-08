@@ -8,6 +8,6 @@ $STANDARD $SRC_PATH $TESTS_PATH
 
 echo "> Running eslint"
 exec $ESLINT \
-  -c $ESLINT_CONFIG \
+  -c mishguru \
   "$@" \
   $SRC_PATH $TESTS_PATH
