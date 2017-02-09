@@ -4,6 +4,6 @@ export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd
 source $NODE_MODULES/@mishguru/package/bin/vars
 
 echo "> Starting AVA"
-exec node --harmony-async-await $AVA \
+exec $AVA \
   $(find $SRC_PATH -name $TESTS_NAME) \
   "$@"
