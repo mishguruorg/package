@@ -3,9 +3,7 @@
 export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
-echo $TESTS_PATH
-
 echo "> Starting AVA"
 exec $AVA \
-  $TESTS_PATH \
+  $(find $SRC_PATH -name $TESTS_NAME) \
   "$@"

@@ -2,7 +2,7 @@
 
 export SRC_PATH=${npm_packages_srcPath:-src}
 export DIST_PATH=${npm_packages_distPath:-dist}
-export TESTS_PATH=${npm_packages_testsPath:-tests}
+export TESTS_NAME=${npm_packages_testsPath:-'*.spec.js'}
 
 PACKAGE=$NODE_MODULES/@mishguru/package/bin
 
