@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export SRC_PATH=${npm_packages_srcPath:-src}
-export DIST_PATH=${npm_packages_distPath:-dist}
-export TESTS_NAME=${npm_packages_testsPath:-'*.spec.js'}
+export SRC_PATH=${npm_package_srcPath:-src}
+export DIST_PATH=${npm_package_distPath:-dist}
+export TESTS_NAME=${npm_package_testsPath:-'*.spec.js'}
 
 PACKAGE=$NODE_MODULES/@mishguru/package/bin
 
