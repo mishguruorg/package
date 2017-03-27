@@ -21,16 +21,16 @@
   },
   "homepage": "https://github.com/stayradiated/pkg#readme",
   "dependencies": {
-    "ava": "^0.18.1",
-    "babel-cli": "^6.23.0",
+    "ava": "^0.18.2",
+    "babel-cli": "^6.24.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.1.8",
-    "babel-register": "^6.23.0",
-    "eslint": "^3.15.0",
-    "eslint-config-mishguru": "^1.0.0",
-    "eslint-config-standard": "^6.2.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-register": "^6.24.0",
+    "eslint": "^3.18.0",
+    "eslint-config-mishguru": "^1.2.0",
+    "eslint-config-standard": "^7.1.0",
     "eslint-config-standard-jsx": "^3.3.0",
     "nyc": "^10.1.2",
-    "standard": "^8.6.0"
+    "standard": "^9.0.2"
   }
 }
