@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export NODE_MODULES="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}" )" )" && cd ../../.. && pwd)"
+export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
 source $NODE_MODULES/@mishguru/package/bin/vars
 
 echo "> Starting NYC"
