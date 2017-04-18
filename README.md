@@ -36,7 +36,7 @@
 }
 ```
 
-### Recommended AVA Config
+## Recommended AVA Config
 
 ```
 "ava": {
@@ -46,3 +46,17 @@
   "babel": "inherit"
 }
 ```
+
+## Lifecycle Test Helpers
+
+### Before All
+
+Create a file called `testHelpers/beforeAll.js` in the root of your project,
+and it will be executed before the tests begin.
+
+### After All
+
+Create a file called `testHelpers/afterAll.js` in the root of your project,
+and it will be executed after the tests finish.
+
+It will be called regardless of whether the tests passed or failed.
