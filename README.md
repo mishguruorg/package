@@ -5,9 +5,10 @@
 ```
 "scripts": {
   "build": "pkg-build",
+  "prepublish": "pkg-build",
   "lint": "pkg-lint",
-  "test": "pkg-test",
-  "coverage": "pkg-coverage"
+  "test": "NODE_ENV=test_local pkg-test",
+  "coverage": "NODE_ENV=test_local pkg-coverage"
 }
 ```
 
