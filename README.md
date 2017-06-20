@@ -17,6 +17,7 @@
 ```
 "babel": {
   "presets": [
+    "flow",
     [
       "env",
       {
