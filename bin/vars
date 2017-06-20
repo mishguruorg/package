@@ -11,3 +11,4 @@ NYC=$NODE_MODULES/nyc/bin/nyc.js
 STANDARD=$NODE_MODULES/standard/bin/cmd.js
 ESLINT=$NODE_MODULES/eslint/bin/eslint.js
 AVA=$NODE_MODULES/ava/cli.js
+FLOW=$NODE_MODULES/flow-bin/cli.js

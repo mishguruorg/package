@@ -5,10 +5,11 @@
 ```
 "scripts": {
   "build": "pkg-build",
-  "prepublish": "pkg-build",
+  "coverage": "NODE_ENV=test_local pkg-coverage",
+  "flow": "pkg-flow",
   "lint": "pkg-lint",
-  "test": "NODE_ENV=test_local pkg-test",
-  "coverage": "NODE_ENV=test_local pkg-coverage"
+  "prepublish": "pkg-build",
+  "test": "NODE_ENV=test_local pkg-test"
 }
 ```
 
