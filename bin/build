@@ -7,3 +7,4 @@ $PACKAGE/clean
 
 echo "> Building from '$SRC_PATH' to '$DIST_PATH'"
 $BABEL $SRC_PATH --out-dir $DIST_PATH "$@"
+$FLOW_COPY $SRC_PATH $DIST_PATH
