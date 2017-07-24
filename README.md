@@ -1,5 +1,17 @@
 # Package
 
+## Default Config
+
+You don't need to add these to `package.json` unless you need to override them.
+
+A common use case is changing the `srcPath` to `lib`.
+
+```
+"srcPath": "src",
+"distPath": "dist",
+"testsPath": "*.spec.js",
+```
+
 ## Recommended Scripts
 
 ```
