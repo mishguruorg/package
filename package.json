@@ -28,13 +28,13 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
-    "eslint": "^4.5.0",
+    "eslint": "^4.7.2",
     "eslint-config-mishguru": "^1.4.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
-    "flow-bin": "^0.53.1",
+    "flow-bin": "^0.56.0",
     "flow-copy-source": "^1.2.1",
-    "nyc": "^11.1.0",
+    "nyc": "^11.2.1",
     "standard": "^10.0.3"
   }
 }
