@@ -21,7 +21,8 @@ A common use case is changing the `srcPath` to `lib`.
   "flow": "pkg-flow",
   "lint": "pkg-lint",
   "prepublish": "pkg-build",
-  "test": "NODE_ENV=test_local pkg-test"
+  "test": "NODE_ENV=test_local pkg-test",
+  "test-only": "NODE_ENV=test_local pkg-test-only"
 }
 ```
 
