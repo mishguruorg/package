@@ -30,7 +30,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
     "eslint": "^4.8.0",
-    "eslint-config-mishguru": "^1.6.0",
+    "eslint-config-mishguru": "^1.7.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
     "flow-bin": "^0.56.0",
