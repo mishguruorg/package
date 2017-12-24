@@ -33,7 +33,7 @@ A common use case is changing the `srcPath` to `lib`.
   "presets": [
     "flow",
     [
-      "env",
+      "@babel/preset-env",
       {
         "targets": {
           "node": "current"
