@@ -24,6 +24,7 @@
   "homepage": "https://github.com/stayradiated/pkg#readme",
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.35",
+    "@babel/core": "^7.0.0-beta.35",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.35",
     "@babel/preset-env": "^7.0.0-beta.35",
     "@babel/preset-flow": "^7.0.0-beta.35",
