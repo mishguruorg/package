@@ -76,3 +76,46 @@ Create a file called `testHelpers/afterAll.js` in the root of your project,
 and it will be executed after the tests finish.
 
 It will be called regardless of whether the tests passed or failed.
+
+## Changelog
+
+### v2.0.0
+
+Switch from `babel-preset-env` to `@babel/preset-env`. You will need to update
+the babel config in your package to reflect this.
+
+Old config:
+
+```
+"babel": {
+  "presets": [
+    "flow",
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  ...
+```
+
+New config
+
+```
+"babel": {
+  "presets": [
+    "flow",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  ...
+```
