@@ -43,7 +43,7 @@ A common use case is changing the `srcPath` to `lib`.
   ],
   "plugins": [
     [
-      "transform-object-rest-spread",
+      "@babel/plugin-proposal-object-rest-spread",
       {
         "useBuiltIns": true
       }
@@ -57,7 +57,7 @@ A common use case is changing the `srcPath` to `lib`.
 ```
 "ava": {
   "require": [
-    "babel-register"
+    "@babel/register"
   ],
   "babel": "inherit"
 }
