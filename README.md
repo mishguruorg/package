@@ -31,7 +31,7 @@ A common use case is changing the `srcPath` to `lib`.
 ```
 "babel": {
   "presets": [
-    "flow",
+    "@babel/preset-flow",
     [
       "@babel/preset-env",
       {
