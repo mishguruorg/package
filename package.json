@@ -1,6 +1,6 @@
 {
   "name": "@mishguru/package",
-  "version": "1.15.4",
+  "version": "1.15.5",
   "description": "Utils for creating, building and testing NPM packages",
   "main": "index.js",
   "bin": {
