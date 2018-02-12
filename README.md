@@ -17,12 +17,13 @@ A common use case is changing the `srcPath` to `lib`.
 ```
 "scripts": {
   "build": "pkg-build",
-  "coverage": "NODE_ENV=test_local pkg-coverage",
+  "prepublish": "npm run build",
+  "postpublish": "git push --tags",
   "flow": "pkg-flow",
   "lint": "pkg-lint",
-  "prepublish": "pkg-build",
   "test": "NODE_ENV=test_local pkg-test",
-  "test-only": "NODE_ENV=test_local pkg-test-only"
+  "test-only": "NODE_ENV=test_local pkg-test-only",
+  "coverage": "NODE_ENV=test_local pkg-coverage"
 }
 ```
 
