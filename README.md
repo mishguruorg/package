@@ -1,5 +1,9 @@
 # Package
 
+## Changelog
+### 2.0.0
+- `standard` updated to v11
+
 ## Default Config
 
 You don't need to add these to `package.json` unless you need to override them.
