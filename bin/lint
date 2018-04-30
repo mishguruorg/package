@@ -8,6 +8,6 @@ $STANDARD $SRC_PATH $TESTS_PATH
 
 echo "> Running eslint"
 exec $ESLINT \
-  -c $NODE_MODULES/eslint-config-mishguru/index.js \
+  -c $NODE_MODULES/@mishguru/eslint-config/index.js \
   "$@" \
   $SRC_PATH $TESTS_PATH
