@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
-source $NODE_MODULES/@mishguru/package/bin/vars
+echo $0
+echo $(readlink "$0")
+echo $(dirname $(readlink "$0"))
+
+source $(dirname $(readlink "$0"))/init
 
 $PACKAGE/clean
 

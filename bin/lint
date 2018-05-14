@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
-source $NODE_MODULES/@mishguru/package/bin/vars
+source $(dirname "$0")/init
 
 echo "> Running eslint"
 exec $ESLINT \

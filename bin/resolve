@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const resolveBin = require('resolve-bin')
+
+const moduleName = process.argv[2]
+const executable = process.argv[3] || moduleName
+
+resolveBin(moduleName, { executable }, (err, path) => {
+  if (err != null) {
+    throw new Error(err)
+  }
+  console.log(path)
+})
