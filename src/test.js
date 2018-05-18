@@ -15,9 +15,10 @@ const test = async () => {
 
   unwireWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
     sync: () => ({
-      babel: {
-        testOptions: BABEL_CONFIG,
-      },
+      cache: false,
+      require: [
+        require.resolve('./babelRegister')
+      ],
       files: relativeFiles[0]
     }),
     filepath: () => SRC_PATH
