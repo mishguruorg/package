@@ -1,7 +1,4 @@
 #!/usr/bin/env node
 
-const flow = require('../src/flow')
-
 const args = process.argv.slice(2)
-
-flow(args).catch(console.error)
+require('../src/cmd/flow')(args).catch(console.error)

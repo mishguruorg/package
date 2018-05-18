@@ -1,10 +1,11 @@
 /* @flow */
 
 const { spawn } = require('child_process')
+const chalk = require('chalk')
 
 const exec = (cmd /*: string */, ...args /*: Array<string> */) => {
   return new Promise((resolve, reject) => {
-    console.log(`> ${cmd} ${args.join(' ')}`)
+    console.log(chalk.grey(`> ${cmd} ${args.join(' ')}`))
 
     const child = spawn(cmd, args, {
       stdio: [ process.stdin, process.stdout, process.stderr ],
@@ -16,6 +17,4 @@ const exec = (cmd /*: string */, ...args /*: Array<string> */) => {
   })
 }
 
-module.exports = {
-  exec
-}
+module.exports = exec

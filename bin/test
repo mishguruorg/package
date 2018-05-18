@@ -1,30 +1,3 @@
 #!/usr/bin/env node
 
-const test = require('../src/test')
-
-test().catch(console.error)
-
-// function runTestHelper {
-//   name=$1
-//   if ([ -f testHelpers/$name.js ])
-//   then
-//     echo "> Running testHelpers/$name.js"
-//     node testHelpers/$name.js
-//   fi
-// }
-//
-// function setup {
-//   runTestHelper 'beforeAll'
-// }
-//
-// function teardown {
-//   runTestHelper 'afterAll'
-// }
-//
-// setup
-// trap teardown EXIT
-//
-// echo "> Starting AVA"
-// $AVA \
-//   $(find $SRC_PATH -name $TESTS_NAME) \
-//   "$@"
+require('../src/cmd/test')().catch(console.error)

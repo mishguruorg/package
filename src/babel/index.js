@@ -1,7 +1,9 @@
+/* @flow */
+
 const globby = require('globby')
 const babel = require('@babel/core')
 const { promisify } = require('util')
-const { dirname, join, resolve } = require('path')
+const { dirname, join, resolve, relative } = require('path')
 const fs = require('fs')
 const mkdirpCb = require('mkdirp')
 
@@ -15,7 +17,7 @@ const transform = async (file, src, dest, options) => {
 
   const { code } = await transformFile(srcPath, options)
 
-  console.log('>', destPath)
+  console.log('  - ', relative(src, srcPath))
 
   await mkdirp(dirname(destPath))
   await writeFile(destPath, code)
@@ -26,7 +28,6 @@ const transformDirectory = async (src, dest, options) => {
   dest = resolve(dest)
 
   const transformFile = (file) => {
-    console.log(file)
     return transform(file, src, dest, {
       filename: file,
       ...options

@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-const clean = require('../src/clean')
-
-clean().catch(console.error)
+require('../src/cmd/clean')().catch(console.error)

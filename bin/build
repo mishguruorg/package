@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-const build = require('../src/build')
-
-build().catch(console.error)
+require('../src/cmd/build')().catch(console.error)
