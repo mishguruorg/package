@@ -1,6 +1,6 @@
 /* @flow */
 
-const { replaceWithContext } = require('unwire')
+const { unwireWithContext } = require('unwire')
 const globby = require('globby')
 const { resolve } = require('path')
 
@@ -12,7 +12,7 @@ const test = async () => {
   const files = await globby(TESTS_NAME, { cwd: SRC_PATH })
   const relativeFiles = files.map((file) => resolve(SRC_PATH, file))
 
-  replaceWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
+  unwireWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
     sync: () => ({
       cache: false,
       require: [ BABEL_REGISTER ],
