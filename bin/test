@@ -1,28 +1,30 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-source $(dirname "$0")/init
+const test = require('../src/test')
 
-function runTestHelper {
-  name=$1
-  if ([ -f testHelpers/$name.js ])
-  then
-    echo "> Running testHelpers/$name.js"
-    node testHelpers/$name.js
-  fi
-}
+test().catch(console.error)
 
-function setup {
-  runTestHelper 'beforeAll'
-}
-
-function teardown {
-  runTestHelper 'afterAll'
-}
-
-setup
-trap teardown EXIT
-
-echo "> Starting AVA"
-$AVA \
-  $(find $SRC_PATH -name $TESTS_NAME) \
-  "$@"
+// function runTestHelper {
+//   name=$1
+//   if ([ -f testHelpers/$name.js ])
+//   then
+//     echo "> Running testHelpers/$name.js"
+//     node testHelpers/$name.js
+//   fi
+// }
+//
+// function setup {
+//   runTestHelper 'beforeAll'
+// }
+//
+// function teardown {
+//   runTestHelper 'afterAll'
+// }
+//
+// setup
+// trap teardown EXIT
+//
+// echo "> Starting AVA"
+// $AVA \
+//   $(find $SRC_PATH -name $TESTS_NAME) \
+//   "$@"

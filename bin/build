@@ -1,13 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-echo $0
-echo $(readlink "$0")
-echo $(dirname $(readlink "$0"))
+const build = require('../src/build')
 
-source $(dirname $(readlink "$0"))/init
-
-$PACKAGE/clean
-
-echo "> Building from '$SRC_PATH' to '$DIST_PATH'"
-$BABEL $SRC_PATH --out-dir $DIST_PATH "$@"
-$FLOW_COPY $SRC_PATH $DIST_PATH
+build().catch(console.error)

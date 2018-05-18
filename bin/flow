@@ -1,5 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-source $(dirname "$0")/init
+const flow = require('../src/flow')
 
-$FLOW "$@"
+const args = process.argv.slice(2)
+
+flow(args).catch(console.error)

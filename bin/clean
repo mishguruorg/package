@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-source $(dirname "$0")/init
+const clean = require('../src/clean')
 
-echo "> Cleaning '$DIST_PATH'"
-rm -rf $DIST_PATH
-mkdir -p $DIST_PATH
+clean().catch(console.error)
