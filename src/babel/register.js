@@ -1,6 +1,6 @@
 /* @flow */
 
-const BABEL_CONFIG = require('./babelConfig.js')
+const BABEL_CONFIG = require('./config.js')
 
 module.exports = [
   require('@babel/register')({
