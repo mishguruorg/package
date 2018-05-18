@@ -1,7 +1,7 @@
 /* @flow */
 
 const { join } = require('path')
-const fileExists = require('fileExists')
+const fileExists = require('file-exists')
 
 const exec = require('../shared/exec')
 
