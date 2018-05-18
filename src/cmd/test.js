@@ -1,27 +1,16 @@
 /* @flow */
 
-const { unwireWithContext } = require('unwire')
-const globby = require('globby')
-const { resolve } = require('path')
+const exec = require('../shared/exec')
 
-const { SRC_PATH, TESTS_NAME } = require('../shared/constants')
-
-const BABEL_REGISTER = require.resolve('../babel/register')
+const AVA = require.resolve('../ava')
 
 const test = async () => {
-  const files = await globby(TESTS_NAME, { cwd: SRC_PATH })
-  const relativeFiles = files.map((file) => resolve(SRC_PATH, file))
+  await exec('node', [`${process.cwd()}/testHelpers/beforeAll.js`])
 
-  unwireWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
-    sync: () => ({
-      cache: false,
-      require: [ BABEL_REGISTER ],
-      files: relativeFiles
-    }),
-    filepath: () => SRC_PATH
-  }))
+  const args = process.argv.slice(2)
+  await exec(AVA, args)
 
-  require('ava/cli')
+  await exec('node', [`${process.cwd()}/testHelpers/afterAll.js`])
 }
 
 module.exports = test
