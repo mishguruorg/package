@@ -13,7 +13,7 @@ dependencies:
   globby: 8.0.1
   mkdirp: 0.5.1
   nyc: 11.8.0
-  unwire: 4.1.0
+  unwire: 5.0.0
   xo: 0.21.1
 packages:
   /@ava/babel-plugin-throws-helper/3.0.0-beta.4:
@@ -5174,13 +5174,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-g3aHP30jNRef+x5vw6jtDfyKtVk=
-  /unwire/4.1.0:
+  /unwire/5.0.0:
     dependencies:
       caller: 1.0.1
       resolve: 1.7.1
     dev: false
     resolution:
-      integrity: sha512-rDvdUExz1mLBbo60GApY34qibDI1zU3jULonj76TH+N9Sm9zfy1G4VGz0gkQr4vOj7hIO8pFci+cB8L+umHzeA==
+      integrity: sha512-u2+qtCHX3Ew4NCgonMLdiEK3J5t31MLz7ODj7CMLzJYBhpHCQ3KT8wE8JZDm1mdikRWg33gYES+ROV4QQJ8aog==
   /unzip-response/2.0.1:
     dev: false
     engines:
@@ -5447,5 +5447,5 @@ specifiers:
   globby: ^8.0.1
   mkdirp: ^0.5.1
   nyc: 11.8.0
-  unwire: ^4.1.0
+  unwire: ^5.0.0
   xo: ^0.21.1

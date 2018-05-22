@@ -5,10 +5,10 @@ const BABEL_CONFIG = {
   plugins: [
     [
       require.resolve('@babel/plugin-proposal-object-rest-spread'),
-      {useBuiltIns: true}
+      {useBuiltIns: true},
     ],
-    require.resolve('@babel/plugin-transform-modules-commonjs')
-  ]
+    require.resolve('@babel/plugin-transform-modules-commonjs'),
+  ],
 }
 
 module.exports = BABEL_CONFIG

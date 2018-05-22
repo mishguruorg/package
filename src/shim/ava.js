@@ -1,5 +1,7 @@
+/* @flow */
+
 const {resolve} = require('path')
-const {unwireWithContext} = require('unwire')
+const {mockWithContext} = require('unwire')
 const globby = require('globby')
 
 const {SRC_PATH, TESTS_NAME} = require('../shared/constants')
@@ -8,19 +10,19 @@ const BABEL_REGISTER = require.resolve('../babel/register')
 
 const start = async () => {
   const files = await globby(TESTS_NAME, {cwd: SRC_PATH})
-  const relativeFiles = files.map(file => resolve(SRC_PATH, file))
+  const relativeFiles = files.map((file) => resolve(SRC_PATH, file))
 
-  unwireWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
+  mockWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
     sync: () => ({
       cache: false,
       verbose: true,
       require: [BABEL_REGISTER],
-      files: relativeFiles
+      files: relativeFiles,
     }),
-    filepath: () => SRC_PATH
+    filepath: () => SRC_PATH,
   }))
 
-  require('ava/cli')
+  return require('ava/cli')
 }
 
 start()
