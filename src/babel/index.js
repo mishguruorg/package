@@ -39,5 +39,4 @@ const transformDirectory = async (src, dest, options) => {
   return Promise.all(files.map(transformFile))
 }
 
-
 module.exports = transformDirectory

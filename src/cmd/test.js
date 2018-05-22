@@ -11,14 +11,14 @@ const test = async () => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')
   const afterAll = join(process.cwd(), '/testHelpers/afterAll.js')
 
-  if (fileExists(beforeAll)) {
+  if (await fileExists(beforeAll)) {
     await exec('node', beforeAll)
   }
 
   const args = process.argv.slice(2)
   await exec('node', AVA, ...args)
 
-  if (fileExists(afterAll)) {
+  if (await fileExists(afterAll)) {
     await exec('node', afterAll)
   }
 }

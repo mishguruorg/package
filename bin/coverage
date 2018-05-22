@@ -1,7 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-source $(dirname "$0")/init
-
-echo "> Starting NYC"
-$NYC $PACKAGE/test
-$NYC report --reporter html
+require('../src/cmd/coverage')().catch(console.error)

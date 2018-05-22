@@ -5,8 +5,8 @@ const BABEL_CONFIG = {
     require.resolve('@babel/preset-flow')
   ],
   plugins: [
-    [ 
-      require.resolve('@babel/plugin-proposal-object-rest-spread'), 
+    [
+      require.resolve('@babel/plugin-proposal-object-rest-spread'),
       { useBuiltIns: true }
     ],
     require.resolve('@babel/plugin-transform-modules-commonjs')
