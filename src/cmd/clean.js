@@ -1,7 +1,7 @@
 /* @flow */
 
 const exec = require('../shared/exec')
-const { DIST_PATH } = require('../shared/constants')
+const {DIST_PATH} = require('../shared/constants')
 
 const clean = async () => {
   console.log(`Cleaning ${DIST_PATH}`)

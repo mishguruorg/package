@@ -1,13 +1,11 @@
 /* @flow */
 
 const BABEL_CONFIG = {
-  presets: [
-    require.resolve('@babel/preset-flow')
-  ],
+  presets: [require.resolve('@babel/preset-flow')],
   plugins: [
     [
       require.resolve('@babel/plugin-proposal-object-rest-spread'),
-      { useBuiltIns: true }
+      {useBuiltIns: true}
     ],
     require.resolve('@babel/plugin-transform-modules-commonjs')
   ]

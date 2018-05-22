@@ -1,11 +1,11 @@
 /* @flow */
 
-const { join } = require('path')
+const {join} = require('path')
 const fileExists = require('file-exists')
 
 const exec = require('../shared/exec')
 
-const AVA = require.resolve('../ava')
+const AVA = require.resolve('../shim/ava')
 
 const test = async () => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')

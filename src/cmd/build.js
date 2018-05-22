@@ -2,7 +2,7 @@
 
 const flowCopy = require('flow-copy-source')
 
-const { SRC_PATH, DIST_PATH } = require('../shared/constants')
+const {SRC_PATH, DIST_PATH} = require('../shared/constants')
 
 const babel = require('../babel')
 const BABEL_CONFIG = require('../babel/config')
