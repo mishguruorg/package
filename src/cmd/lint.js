@@ -1,15 +1,15 @@
 /* @flow */
 
-const {SRC_PATH} = require('../shared/constants')
+const { SRC_PATH } = require('../shared/constants')
 const exec = require('../shared/exec')
-const {log, fmt} = require('../shared/log')
+const { log, fmt } = require('../shared/log')
 
-const XO = require.resolve('../shim/xo')
+const LINTER = require.resolve('../shim/eslint')
 
 const lint = async () => {
   const args = process.argv.slice(2)
-  log(fmt`Running ${'xo'} ${args}`)
-  await exec('node', XO, ...args, SRC_PATH)
+  log(fmt`Running ${'eslint'} ${args}`)
+  await exec('node', LINTER, ...args, SRC_PATH)
 }
 
 module.exports = lint

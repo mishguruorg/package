@@ -1,7 +1,7 @@
 /* @flow */
 
 const exec = require('../shared/exec')
-const {log, fmt} = require('../shared/log')
+const { log, fmt } = require('../shared/log')
 
 const NYC = require.resolve('nyc/bin/nyc')
 const TEST = require.resolve('../../bin/test')

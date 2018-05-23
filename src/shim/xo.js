@@ -1,8 +1,8 @@
 /* @flow */
 
-const {mockWithContext, resolveModulePath} = require('unwire')
+const { mockWithContext, resolveModulePath } = require('unwire')
 
-const {SRC_PATH} = require('../shared/constants')
+const { SRC_PATH } = require('../shared/constants')
 const rewire = require('../shared/rewire')
 
 // This is where the magic happens! rewire() will go through these dependencies
@@ -21,8 +21,9 @@ rewire([
       'eslint-plugin-unicorn',
       'eslint-plugin-import',
       ['eslint-plugin-import', ['eslint-import-resolver-node']],
-    ],
-  ],
+      ['eslint-plugin-ava', ['espree']]
+    ]
+  ]
 ])
 
 const start = async () => {
@@ -43,10 +44,10 @@ const start = async () => {
               singleQuote: true,
               tabWidth: 2,
               trailingComma: 'es5',
-              useTabs: false,
-            },
-          }),
-        }),
+              useTabs: false
+            }
+          })
+        })
       }
     }
   )
@@ -58,10 +59,10 @@ const start = async () => {
       prettier: true,
       rules: {
         'comma-dangle': ['error', 'only-multiline'],
-        'arrow-parens': ['error', 'always'],
-      },
+        'arrow-parens': ['error', 'always']
+      }
     }),
-    filepath: () => SRC_PATH,
+    filepath: () => SRC_PATH
   }))
 
   return require('xo/cli')

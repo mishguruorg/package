@@ -1,7 +1,7 @@
 /* @flow */
 
-const {promisify} = require('util')
-const {dirname, join, resolve, relative} = require('path')
+const { promisify } = require('util')
+const { dirname, join, resolve, relative } = require('path')
 const fs = require('fs')
 const chalk = require('chalk')
 const babel = require('@babel/core')
@@ -21,7 +21,7 @@ const transform = async (
   const srcPath = join(src, file)
   const destPath = join(dest, file)
 
-  const {code} = await transformFile(srcPath, options)
+  const { code } = await transformFile(srcPath, options)
 
   console.log(chalk.white(`  - ${relative(src, srcPath)}`))
 
@@ -40,11 +40,11 @@ const transformDirectory = async (
   const transformFile = (file) => {
     return transform(file, src, dest, {
       filename: file,
-      ...options,
+      ...options
     })
   }
 
-  const files = await globby('**/*.js', {cwd: src})
+  const files = await globby('**/*.js', { cwd: src })
 
   return Promise.all(files.map(transformFile))
 }

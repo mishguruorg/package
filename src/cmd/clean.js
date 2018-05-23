@@ -1,8 +1,8 @@
 /* @flow */
 
-const {log, fmt} = require('../shared/log')
+const { log, fmt } = require('../shared/log')
 const exec = require('../shared/exec')
-const {DIST_PATH} = require('../shared/constants')
+const { DIST_PATH } = require('../shared/constants')
 
 const clean = async () => {
   log(fmt`Cleaning ${DIST_PATH} directory`)

@@ -1,10 +1,10 @@
 /* @flow */
 
-const {join} = require('path')
+const { join } = require('path')
 const fileExists = require('file-exists')
 
 const exec = require('../shared/exec')
-const {log, fmt} = require('../shared/log')
+const { log, fmt } = require('../shared/log')
 
 const AVA = require.resolve('../shim/ava')
 

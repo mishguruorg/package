@@ -2,7 +2,7 @@
 
 const chalk = require('chalk')
 
-const {SRC_PATH, DIST_PATH} = require('./constants')
+const { SRC_PATH, DIST_PATH } = require('./constants')
 
 const log = (...args /* : Array<string> */) => console.log(...args)
 
@@ -16,7 +16,7 @@ const fmt = (
       let value = values[index]
 
       if (Array.isArray(value)) {
-        value = chalk.green(value.join(' '))
+        value = value.join(' ')
       }
 
       switch (value) {
@@ -28,15 +28,8 @@ const fmt = (
           total += chalk.yellow(value)
           break
 
-        case 'ava':
-        case 'flow':
-        case 'nyc':
-        case 'xo':
-          total += chalk.green(value)
-          break
-
         default:
-          total += value
+          total += chalk.green(value)
           break
       }
     }
@@ -48,5 +41,5 @@ const fmt = (
 
 module.exports = {
   log,
-  fmt,
+  fmt
 }

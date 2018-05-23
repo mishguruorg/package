@@ -3,7 +3,7 @@
 // $FlowFixMe
 const Module = require('module')
 
-const {resolveModulePath} = require('unwire')
+const { resolveModulePath } = require('unwire')
 
 const REWIRE_FINDPATH = new Map()
 const findPath = Module._findPath
