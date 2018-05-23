@@ -21,7 +21,8 @@ rewire([
     'eslint-config-standard',
     'eslint-plugin-import',
     'eslint-plugin-node',
-    'eslint-plugin-promise'
+    'eslint-plugin-promise',
+    ['eslint-plugin-import', ['eslint-import-resolver-node']]
   ]]
 ])
 
