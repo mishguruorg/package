@@ -6,6 +6,7 @@ const globby = require('globby')
 
 const { SRC_PATH, TESTS_NAME } = require('../shared/constants')
 
+const BABEL_CONFIG = require('../babel/config')
 const BABEL_REGISTER = require.resolve('../babel/register')
 
 const start = async () => {
@@ -17,6 +18,9 @@ const start = async () => {
       cache: false,
       verbose: true,
       require: [BABEL_REGISTER],
+      babel: {
+        testOptions: BABEL_CONFIG
+      }
       files: relativeFiles
     }),
     filepath: () => SRC_PATH
