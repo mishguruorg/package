@@ -20,7 +20,7 @@ const start = async () => {
       require: [BABEL_REGISTER],
       babel: {
         testOptions: BABEL_CONFIG
-      }
+      },
       files: relativeFiles
     }),
     filepath: () => SRC_PATH
