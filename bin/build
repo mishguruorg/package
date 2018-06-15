@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
-source $NODE_MODULES/@mishguru/package/bin/vars
-
-$PACKAGE/clean
-
-echo "> Building from '$SRC_PATH' to '$DIST_PATH'"
-$BABEL $SRC_PATH --out-dir $DIST_PATH "$@"
-$FLOW_COPY $SRC_PATH $DIST_PATH
+require('../src/cmd/build')().catch(console.error)

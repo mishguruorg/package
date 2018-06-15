@@ -1,8 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
-source $NODE_MODULES/@mishguru/package/bin/vars
-
-echo "> Cleaning '$DIST_PATH'"
-rm -rf $DIST_PATH
-mkdir -p $DIST_PATH
+require('../src/cmd/clean')().catch(console.error)

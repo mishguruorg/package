@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-export NODE_MODULES="$(cd $(dirname "$0")/$(dirname $(readlink "$0"))/../../.. && pwd)"
-source $NODE_MODULES/@mishguru/package/bin/vars
-
-$FLOW "$@"
+require('../src/cmd/flow')().catch(console.error)

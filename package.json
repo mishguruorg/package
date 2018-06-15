@@ -1,6 +1,6 @@
 {
   "name": "@mishguru/package",
-  "version": "3.3.0",
+  "version": "4.1.0",
   "description": "Utils for creating, building and testing NPM packages",
   "main": "index.js",
   "bin": {
@@ -9,8 +9,7 @@
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
     "pkg-lint": "./bin/lint",
-    "pkg-test": "./bin/test",
-    "pkg-test-only": "./bin/test-only"
+    "pkg-test": "./bin/test"
   },
   "repository": {
     "type": "git",
@@ -23,15 +22,21 @@
   },
   "homepage": "https://github.com/stayradiated/pkg#readme",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.51",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-flow": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
     "@mishguru/eslint-config": "^4.1.0",
-    "ava": "0.25.0",
-    "babel-cli": "6.26.0",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-flow": "6.23.0",
-    "babel-register": "6.26.0",
-    "flow-bin": "0.72.0",
-    "flow-copy-source": "1.3.0",
-    "nyc": "11.7.3"
+    "ava": "^1.0.0-beta.4",
+    "chalk": "^2.4.1",
+    "file-exists": "^5.0.1",
+    "flow-bin": "0.74.0",
+    "flow-copy-source": "2.0.0",
+    "globby": "^8.0.1",
+    "mkdirp": "^0.5.1",
+    "nyc": "12.0.2",
+    "unwire": "^5.0.0"
   }
 }
