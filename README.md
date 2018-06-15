@@ -42,6 +42,15 @@ Copy same (or all) of the following into your `package.json`.
 
 ## Lifecycle Test Helpers
 
+AVA does not support "before all" or "after all" functions, because it runs
+everything in parallel.
+
+Package has got your back though. If you need to setup/teardown a database,
+then this is for you.
+
+Please note, that if you run AVA in watch mode, the "after all" function will
+not be called until you exit AVA.
+
 ### Before All
 
 Create a file called `testHelpers/beforeAll.js` in the root of your project,
