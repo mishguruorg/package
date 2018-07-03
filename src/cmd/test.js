@@ -19,11 +19,15 @@ const test = async () => {
 
   const args = process.argv.slice(2)
   log(fmt`Running ${'ava'} ${args}`)
-  await exec('node', AVA, ...args)
-
-  if (await fileExists(afterAll)) {
-    log(fmt`Running afterAll.js`)
-    await exec('node', afterAll)
+  try {
+    await exec('node', AVA, ...args)
+  } catch (err) {
+    throw err
+  } finally {
+    if (await fileExists(afterAll)) {
+      log(fmt`Running afterAll.js`)
+      await exec('node', afterAll)
+    }
   }
 }
 
