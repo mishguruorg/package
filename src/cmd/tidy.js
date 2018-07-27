@@ -10,7 +10,7 @@ const PRETTIER = require.resolve('prettier/bin-prettier')
 const prettier = async () => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'prettier'} ${args}`)
-  await exec('node', PRETTIER, '--write', ...args, `**/SRC_PATH/**`)
+  await exec('node', PRETTIER, '--write', ...args, `**/${SRC_PATH}/**`)
 }
 
 module.exports = prettier
