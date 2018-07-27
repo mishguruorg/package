@@ -17,7 +17,12 @@ const config = [
 const prettier = async () => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'prettier'} ${args}`)
-  await exec('node', PRETTIER, ...config, ...args, `**/${SRC_PATH}/**`)
+
+  const files = args.length > 0 
+    ? args 
+    : [`**/${SRC_PATH}/**`]
+    
+  await exec('node', PRETTIER, ...config, ...files)
 }
 
 module.exports = prettier
