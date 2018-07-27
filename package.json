@@ -37,8 +37,10 @@
     "flow-copy-source": "2.0.2",
     "globby": "^8.0.1",
     "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "mkdirp": "^0.5.1",
     "nyc": "12.0.2",
+    "prettier": "1.13.7",
     "unwire": "^5.0.0"
   }
 }
