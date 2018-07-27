@@ -9,7 +9,8 @@
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
     "pkg-lint": "./bin/lint",
-    "pkg-test": "./bin/test"
+    "pkg-test": "./bin/test",
+    "pkg-tidy": "./bin/tidy"
   },
   "repository": {
     "type": "git",
