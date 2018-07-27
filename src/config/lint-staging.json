@@ -1,0 +1,7 @@
+{
+  "*.{js,json,css,md}": [
+    "pkg-tidy",
+    "pkg-lint --fix",
+    "git add"
+  ]
+}
