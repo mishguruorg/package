@@ -11,13 +11,13 @@ const config = [
   '--single-quote',
   '--trailing-comma none',
   '--no-semi',
-  '--write '
-].join(' ')
+  '--write'
+]
 
 const prettier = async () => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'prettier'} ${args}`)
-  await exec('node', PRETTIER, config, ...args, `**/${SRC_PATH}/**`)
+  await exec('node', PRETTIER, ...config, ...args, `**/${SRC_PATH}/**`)
 }
 
 module.exports = prettier
