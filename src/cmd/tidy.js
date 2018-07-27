@@ -12,8 +12,7 @@ const config = [
   '--trailing-comma',
   '--no-semi',
   '--list-different',
-  '--print-width 100',
-  '--write'
+  '--write '
 ].join(' ')
 
 const prettier = async () => {
