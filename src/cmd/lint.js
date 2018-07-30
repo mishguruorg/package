@@ -14,7 +14,7 @@ const lint = async () => {
 
   const minArgCount = isFix ? 1 : 0
 
-  let files = [`**/${SRC_PATH}/**`]
+  let files = [`${SRC_PATH}`]
 
   if (args.length > minArgCount) {
     const fixIndex = args.indexOf('--fix')
