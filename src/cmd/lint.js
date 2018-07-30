@@ -14,9 +14,15 @@ const lint = async () => {
 
   const minArgCount = isFix ? 1 : 0
 
-  const files = args.length > minArgCount 
-    ? args 
-    : [`**/${SRC_PATH}/**`]
+  let files = [`**/${SRC_PATH}/**`]
+
+  if (args.length > minArgCount) {
+    const fixIndex = args.indexOf('--fix')
+    if (fixIndex > -1) {
+      args.splice(fixIndex, 1)
+    }
+    files = args
+  } 
 
   await exec('node', LINTER, isFix ? '--fix' : '', ...files)
 }
