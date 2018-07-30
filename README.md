@@ -12,13 +12,15 @@ Copy same (or all) of the following into your `package.json`.
 
 ```
 "scripts": {
+  "precommit": "pkg-precommit",
   "build": "pkg-build",
   "prepublish": "npm run build",
   "postpublish": "git push --tags",
   "flow": "pkg-flow",
   "lint": "pkg-lint",
   "test": "NODE_ENV=test_local pkg-test",
-  "coverage": "NODE_ENV=test_local pkg-coverage"
+  "coverage": "NODE_ENV=test_local pkg-coverage",
+  "tidy": "pkg-tidy"
 }
 ```
 
@@ -36,6 +38,8 @@ Copy same (or all) of the following into your `package.json`.
 - `pkg-coverage` cleans up the `.nyc_output` folder after it's finished.
 - The babel config has been reduced to just flow, object spread and commonjs.
   We used to include the `env` config. You should notice faster babel builds!
+- `pkg-tidy` is now a thing, it runs prettier on all the files
+- `pkg-precommit` is now a thing, it runs prettier and lint on all stage files before a commit happens
 
 ### 2.0.0
 - `standard` updated to v11
