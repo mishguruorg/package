@@ -10,6 +10,7 @@ const PRETTIER = require.resolve('prettier/bin-prettier')
 const config = [
   '--single-quote',
   '--trailing-comma=none',
+  '--arrow-parens=always',
   '--no-semi',
   '--write'
 ]
