@@ -9,7 +9,7 @@ const PRETTIER = require.resolve('prettier/bin-prettier')
 
 const config = [
   '--single-quote',
-  '--trailing-comma none',
+  '--trailing-comma=none',
   '--no-semi',
   '--write'
 ]
