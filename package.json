@@ -32,7 +32,7 @@
     "@babel/preset-flow": "^7.0.0-rc.2",
     "@babel/register": "^7.0.0-rc.2",
     "@mishguru/eslint-config": "^4.1.0",
-    "ava": "^1.0.0-beta.4",
+    "ava": "^1.0.0-beta.7",
     "chalk": "^2.4.1",
     "file-exists": "^5.0.1",
     "flow-bin": "0.79.1",
