@@ -19,10 +19,11 @@ const prettier = async () => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'prettier'} ${args}`)
 
-  const files = args.length > 0 
-    ? args 
-    : [`./${SRC_PATH}/**/*.{js,jsx,css,scss,ts,md,yml,json,less}`]
-    
+  const files =
+    args.length > 0
+      ? args
+      : [`./${SRC_PATH}/**/*.{js,jsx,css,scss,ts,md,yml,json,less}`]
+
   await exec('node', PRETTIER, ...config, ...files)
 }
 

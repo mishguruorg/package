@@ -22,7 +22,7 @@ const lint = async () => {
       args.splice(fixIndex, 1)
     }
     files = args
-  } 
+  }
 
   await exec('node', LINTER, isFix ? '--fix' : '', ...files)
 }
