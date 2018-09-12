@@ -6,25 +6,21 @@ const { log, fmt } = require('../shared/log')
 
 const LINTER = require.resolve('../shim/eslint')
 
-const lint = async () => {
+const lint = async () => { 
   const args = process.argv.slice(2)
   log(fmt`Running ${'eslint'} ${args}`)
 
-  const isFix = args.includes('--fix')
-
-  const minArgCount = isFix ? 1 : 0
-
-  let files = [`${SRC_PATH}`]
-
-  if (args.length > minArgCount) {
-    const fixIndex = args.indexOf('--fix')
+  const options = args.filter(input => input.startsWith('--'))
+  if (options.length > 0) {
+    const fixIndex = args.indexOf(options[0])
     if (fixIndex > -1) {
-      args.splice(fixIndex, 1)
+      args.splice(fixIndex, options.length)
     }
-    files = args
-  }
+  } 
 
-  await exec('node', LINTER, isFix ? '--fix' : '', ...files)
+  let files = args.length === 0 ? [`${SRC_PATH}`] : args
+
+  await exec('node', LINTER, ...options, ...files)
 }
 
 module.exports = lint
