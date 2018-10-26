@@ -26,6 +26,34 @@ Copy same (or all) of the following into your `package.json`.
 
 ## Changelog
 
+### 5.0.0
+- Husky got a major bump update (0.14.3 => 1.1.1)
+
+From: https://github.com/typicode/husky
+
+Simply move your existing hooks to `husky.hooks` field and use raw Git hooks names. Also, if you're using the `GIT_PARAMS` env variable, rename it to `HUSKY_GIT_PARAMS`.
+
+```diff
+{
+  "scripts": {
+-   "precommit": "npm test",
+-   "commitmsg": "commitlint -E GIT_PARAMS"
+  },
++ "husky": {
++   "hooks": {
++     "pre-commit": "npm test",
++     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
++   }
++ }
+}
+```
+
+Alternatively, you can run the following command which will do the same automatically for you ;)
+
+```
+./node_modules/.bin/husky-upgrade
+```
+
 ### 4.0.0
 - All bash scripts have been rewritten to use JavaScript. So this should work
   on Windows (not tested yet though!)
