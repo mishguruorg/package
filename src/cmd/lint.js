@@ -19,7 +19,7 @@ const lint = async () => {
   } 
 
   const files = args.length === 0 ? [`${SRC_PATH}`] : args
-  options.push('--ext', '.jsx', '--ext', '.js')
+  options.push('--ext', '.jsx', '--ext', '.js', '--ext', '.ts')
 
   await exec('node', LINTER, ...options, ...files)
 }
