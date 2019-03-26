@@ -9,6 +9,7 @@ const config = {
     moduleResolution: 'node',
     noImplicitAny: true,
     outDir: DIST_PATH,
+    resolveJsonModule: true,
     sourceMap: true,
     target: 'es2018',
     paths: {

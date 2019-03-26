@@ -1,3 +1,0 @@
-{
-  "*.{js,jsx}": ["pkg-tidy", "pkg-lint --fix", "git add"]
-}

@@ -8,7 +8,8 @@
     "build": "rm -rf ./dist && tsc",
     "test": "./bin/test",
     "lint": "./bin/lint",
-    "tidy": "./bin/tidy"
+    "tidy": "./bin/tidy",
+    "precommit": "./bin/precommit"
   },
   "bin": {
     "pkg-precommit": "./bin/precommit",
