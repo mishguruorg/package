@@ -1,33 +1,10 @@
 import { join, dirname, resolve } from 'path'
 import { mockWithContext } from 'unwire'
 
-import { SRC_PATH, DIST_PATH } from '../shared/constants'
+import { SRC_PATH } from '../shared/constants'
+import tsconfigJSON from '../config/tsconfig'
 
 const TSCONFIG_PATH = join(dirname(resolve(SRC_PATH)), 'tsconfig.json')
-const TSCONFIG_DATA = `
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "outDir": "${DIST_PATH}",
-    "sourceMap": true,
-    "target": "es2018",
-    "paths": {
-      "*": [
-        "node_modules/*",
-        "${SRC_PATH}/types/*"
-      ]
-    }
-  },
-  "include": [
-    "${SRC_PATH}/**/*"
-  ]
-}
-`
 
 const MOCK_FILE = {
   isFile: () => true,
@@ -45,7 +22,7 @@ const start = async () => {
     },
     readFileSync: (path: string, options: any) => {
       if (path === TSCONFIG_PATH) {
-        return Buffer.from(TSCONFIG_DATA, 'utf8')
+        return Buffer.from(tsconfigJSON, 'utf8')
       }
       return fs.readFileSync(path, options)
     }

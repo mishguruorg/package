@@ -4,7 +4,7 @@
   "description": "Utils for creating, building and testing NPM packages",
   "main": "index.js",
   "scripts": {
-    "build": "./bin/clean && tsc",
+    "build": "rm -rf ./dist && tsc",
     "test": "./bin/test-tsc",
     "lint": "./bin/lint-tsc",
     "tidy": "./bin/tidy"
