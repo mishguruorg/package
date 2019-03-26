@@ -7,14 +7,15 @@ const TSCONFIG_PATH = join(dirname(resolve(SRC_PATH)), 'tsconfig.json')
 const TSCONFIG_DATA = `
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es2018",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "${DIST_PATH}",
     "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "${DIST_PATH}",
+    "sourceMap": true,
+    "target": "es2018",
     "paths": {
       "*": [
         "node_modules/*",
