@@ -4,7 +4,7 @@ import fileExists from 'file-exists'
 import exec from '../shared/exec'
 import { log, fmt } from '../shared/log'
 
-const AVA_PATH = require.resolve('../shim/ava')
+const AVA_PATH = require.resolve('../shim/ava-tsc')
 
 const test = async () => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')

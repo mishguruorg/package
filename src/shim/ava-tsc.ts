@@ -3,9 +3,9 @@ import { mockWithContext } from 'unwire'
 import globby from 'globby'
 import * as pkgConf from 'pkg-conf'
 
-import { SRC_PATH, TESTS_NAME } from '../shared/constants'
+import { SRC_PATH, TESTS_NAME, DIST_PATH } from '../shared/constants'
 
-const TS_NODE_PATH = require.resolve('ts-node')
+const TS_NODE_PATH = require.resolve('ts-node/register')
 
 const start = async () => {
   const files = await globby(TESTS_NAME, { cwd: SRC_PATH })
@@ -19,7 +19,7 @@ const start = async () => {
           require: [TS_NODE_PATH],
           compileEnhancements: false,
           extensions: ['ts'],
-          files: relativeFiles
+          files: [relativeFiles, `!${DIST_PATH}/`]
         }
         return pkgConf.sync(pkgName, opts)
       }
