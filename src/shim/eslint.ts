@@ -1,8 +1,6 @@
-/* @flow */
+import { resolveModulePath } from 'unwire'
 
-const { resolveModulePath } = require('unwire')
-
-const rewire = require('../shared/rewire')
+import rewire from '../shared/rewire'
 
 // This is where the magic happens! rewire() will go through these dependencies
 // and make sure they are all available from the current directory

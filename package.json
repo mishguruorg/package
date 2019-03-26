@@ -4,6 +4,7 @@
   "description": "Utils for creating, building and testing NPM packages",
   "main": "index.js",
   "scripts": {
+    "build": "rm -rf ./dist && tsc",
     "test": "./bin/test",
     "lint": "./bin/lint",
     "tidy": "./bin/tidy"
@@ -11,6 +12,7 @@
   "bin": {
     "pkg-precommit": "./bin/precommit",
     "pkg-build": "./bin/build",
+    "pkg-build-tsc": "./bin/build-tsc",
     "pkg-clean": "./bin/clean",
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
@@ -47,7 +49,13 @@
     "lint-staged": "8.1.5",
     "mkdirp": "0.5.1",
     "nyc": "13.3.0",
+    "pkg-conf": "^3.0.0",
     "prettier": "1.16.4",
+    "typescript": "^3.3.4000",
     "unwire": "6.0.0"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^0.5.2",
+    "@types/pkg-conf": "^3.0.0"
   }
 }

@@ -1,9 +1,7 @@
-/* @flow */
+import { mockWithContext, resolveModulePath } from 'unwire'
 
-const { mockWithContext, resolveModulePath } = require('unwire')
-
-const { SRC_PATH } = require('../shared/constants')
-const rewire = require('../shared/rewire')
+import { SRC_PATH } from '../shared/constants'
+import rewire from '../shared/rewire'
 
 // This is where the magic happens! rewire() will go through these dependencies
 // and make sure they are all available from the current directory
@@ -30,7 +28,7 @@ const start = async () => {
   mockWithContext(
     './third-party.js',
     resolveModulePath('prettier', require.resolve('xo')),
-    (thirdParty) => {
+    (thirdParty: any) => {
       return {
         ...thirdParty,
         cosmiconfig: () => ({

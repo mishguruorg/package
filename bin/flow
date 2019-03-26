@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('../src/cmd/flow')().catch((err) => {
+require('../dist/cmd/flow')().catch((err) => {
   console.error(err)
   process.exitCode = 1
 })

@@ -1,10 +1,8 @@
-/* @flow */
+import { spawn } from 'child_process'
 
-const { spawn } = require('child_process')
-
-const exec = (cmd /* : string */, ...args /* : Array<string> */) => {
+const exec = (cmd: string, ...args: Array<string>) => {
   return new Promise((resolve, reject) => {
-    const error = new Error(`"${cmd} ${args.join(' ')}" failed!`)
+    const error = new Error(`"${cmd} ${args}" failed!`)
 
     const child = spawn(cmd, args, {
       stdio: [process.stdin, process.stdout, process.stderr],
@@ -22,4 +20,4 @@ const exec = (cmd /* : string */, ...args /* : Array<string> */) => {
   })
 }
 
-module.exports = exec
+export default exec

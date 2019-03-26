@@ -1,11 +1,9 @@
-/* @flow */
+import { SRC_PATH } from '../shared/constants'
 
-const { SRC_PATH } = require('../shared/constants')
+import exec from '../shared/exec'
+import { log, fmt } from '../shared/log'
 
-const exec = require('../shared/exec')
-const { log, fmt } = require('../shared/log')
-
-const PRETTIER = require.resolve('prettier/bin-prettier')
+const PRETTIER_PATH = require.resolve('prettier/bin-prettier')
 
 const config = [
   '--single-quote',
@@ -24,7 +22,7 @@ const prettier = async () => {
       ? args
       : [`./${SRC_PATH}/**/*.{js,jsx,css,scss,ts,md,yml,json,less}`]
 
-  await exec('node', PRETTIER, ...config, ...files)
+  await exec('node', PRETTIER_PATH, ...config, ...files)
 }
 
-module.exports = prettier
+export default prettier

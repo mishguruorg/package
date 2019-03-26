@@ -1,12 +1,10 @@
-/* @flow */
+import { join } from 'path'
+import fileExists from 'file-exists'
 
-const { join } = require('path')
-const fileExists = require('file-exists')
+import exec from '../shared/exec'
+import { log, fmt } from '../shared/log'
 
-const exec = require('../shared/exec')
-const { log, fmt } = require('../shared/log')
-
-const AVA = require.resolve('../shim/ava')
+const AVA_PATH = require.resolve('../shim/ava')
 
 const test = async () => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')
@@ -20,7 +18,7 @@ const test = async () => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'ava'} ${args}`)
   try {
-    await exec('node', AVA, ...args)
+    await exec('node', AVA_PATH, ...args)
   } catch (err) {
     throw err
   } finally {
@@ -31,4 +29,4 @@ const test = async () => {
   }
 }
 
-module.exports = test
+export default test

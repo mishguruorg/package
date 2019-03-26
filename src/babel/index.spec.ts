@@ -1,6 +1,6 @@
-const test = require('ava')
+import test from 'ava'
 
-const transformDirectory = require('./index')
+import transformDirectory from './index'
 
 test('transformDirectory is a function', (t) => {
   t.is(typeof transformDirectory, 'function')

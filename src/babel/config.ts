@@ -1,5 +1,3 @@
-/* @flow */
-
 const BABEL_CONFIG = {
   presets: [require.resolve('@babel/preset-flow')],
   plugins: [
@@ -13,4 +11,4 @@ const BABEL_CONFIG = {
   ]
 }
 
-module.exports = BABEL_CONFIG
+export default BABEL_CONFIG

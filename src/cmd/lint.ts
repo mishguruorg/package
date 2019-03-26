@@ -24,4 +24,4 @@ const lint = async () => {
   await exec('node', LINTER, ...options, ...files)
 }
 
-module.exports = lint
+export default lint
