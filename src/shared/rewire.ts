@@ -4,7 +4,7 @@ const Module = require('module')
 
 const REWIRE_FINDPATH = new Map()
 const findPath = Module._findPath
-Module._findPath = (...args: Array<string>) => {
+Module._findPath = (...args: string[]) => {
   const [path] = args
   if (REWIRE_FINDPATH.has(path)) {
     return REWIRE_FINDPATH.get(path)
@@ -14,7 +14,7 @@ Module._findPath = (...args: Array<string>) => {
 
 const REWIRE_LOAD = new Map()
 const load = Module._load
-Module._load = (...args: Array<string>) => {
+Module._load = (...args: string[]) => {
   const [path] = args
   if (REWIRE_LOAD.has(path)) {
     return REWIRE_LOAD.get(path)
@@ -28,7 +28,7 @@ interface PathTreeArray extends Array<string | PathTree> {}
 const rewireChildren = (
   context: string,
   parent: string,
-  children: PathTreeArray
+  children: PathTreeArray,
 ) => {
   const parentPath = resolveModulePath(parent, context)
 
@@ -47,7 +47,7 @@ const rewireChildren = (
   })
 }
 
-const rewire = (dependencyTree: Array<PathTree>) => {
+const rewire = (dependencyTree: PathTree[]) => {
   dependencyTree.forEach((item) => {
     const [parent, children] = item
     rewireChildren(__dirname, parent, children)

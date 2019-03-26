@@ -3,12 +3,12 @@ const BABEL_CONFIG = {
   plugins: [
     [
       require.resolve('@babel/plugin-proposal-object-rest-spread'),
-      { useBuiltIns: true }
+      { useBuiltIns: true },
     ],
     require.resolve('@babel/plugin-transform-modules-commonjs'),
     // Just for admin-portal, I'd love to remove this preset if possible.
-    require.resolve('@babel/plugin-transform-shorthand-properties')
-  ]
+    require.resolve('@babel/plugin-transform-shorthand-properties'),
+  ],
 }
 
 export default BABEL_CONFIG

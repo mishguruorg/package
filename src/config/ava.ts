@@ -15,9 +15,9 @@ const getConfig = async () => {
     verbose: true,
     require: [BABEL_REGISTER_PATH],
     babel: {
-      testOptions: BABEL_CONFIG
+      testOptions: BABEL_CONFIG,
     },
-    files: [...relativeFiles, `!${DIST_PATH}/`]
+    files: [...relativeFiles, `!${DIST_PATH}/`],
   }
 }
 

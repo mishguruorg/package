@@ -12,10 +12,10 @@ const config = {
     sourceMap: true,
     target: 'es2018',
     paths: {
-      '*': ['node_modules/*', `${SRC_PATH}/types/*`]
-    }
+      '*': ['node_modules/*', `${SRC_PATH}/types/*`],
+    },
   },
-  include: [`${SRC_PATH}/**/*`]
+  include: [`${SRC_PATH}/**/*`],
 }
 
 const tsconfigJSON = JSON.stringify(config, null, 2)

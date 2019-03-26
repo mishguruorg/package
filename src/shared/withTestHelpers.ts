@@ -4,7 +4,7 @@ import fileExists from 'file-exists'
 import exec from '../shared/exec'
 import { log, fmt } from '../shared/log'
 
-const withTestHelpers = async (cb: () => Promise<void>) => {
+const withTestHelpers = async (worker: () => Promise<void>) => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')
   const afterAll = join(process.cwd(), '/testHelpers/afterAll.js')
 
@@ -13,7 +13,7 @@ const withTestHelpers = async (cb: () => Promise<void>) => {
     await exec('node', beforeAll)
   }
   try {
-    await cb()
+    await worker()
   } catch (err) {
     throw err
   } finally {

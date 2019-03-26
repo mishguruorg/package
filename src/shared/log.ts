@@ -2,11 +2,11 @@ import chalk from 'chalk'
 
 import { SRC_PATH, DIST_PATH } from './constants'
 
-const log = (...args: Array<string>) => console.log(...args)
+const log = (...args: string[]) => console.log(...args)
 
 const fmt = (
   strings: TemplateStringsArray,
-  ...values: Array<string | Array<string>>
+  ...values: (string | string[])[]
 ) => {
   const message = strings.reduce((total, current, index) => {
     total += current

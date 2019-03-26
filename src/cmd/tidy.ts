@@ -10,7 +10,7 @@ const config = [
   '--trailing-comma=all',
   '--arrow-parens=always',
   '--no-semi',
-  '--write'
+  '--write',
 ]
 
 const prettier = async () => {

@@ -3,7 +3,7 @@ import * as pkgConf from 'pkg-conf'
 
 import { SRC_PATH } from '../shared/constants'
 
-import getConfig from '../config/ava'
+import getConfig from '../config/ava-tsc'
 
 const start = async () => {
   const config = await getConfig()

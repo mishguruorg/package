@@ -14,7 +14,7 @@ const getConfig = async () => {
     require: [TS_NODE_PATH],
     compileEnhancements: false,
     extensions: ['ts'],
-    files: [...relativeFiles, `!${DIST_PATH}/`]
+    files: [...relativeFiles, `!${DIST_PATH}/`],
   }
 }
 

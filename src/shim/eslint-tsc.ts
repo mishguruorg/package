@@ -21,19 +21,19 @@ rewire([
       'eslint-plugin-react',
       'eslint-plugin-standard',
       'typescript',
-      ['eslint-plugin-import', ['eslint-import-resolver-node']]
-    ]
-  ]
+      ['eslint-plugin-import', ['eslint-import-resolver-node']],
+    ],
+  ],
 ])
 
 const start = async () => {
   process.argv.push(
     '--config',
-    require.resolve('@mishguru/eslint-typescript-config')
+    require.resolve('@mishguru/eslint-typescript-config'),
   )
   const ESLINT = resolveModulePath(
     'eslint/bin/eslint',
-    require.resolve('eslint')
+    require.resolve('eslint'),
   )
   return require(ESLINT)
 }

@@ -22,16 +22,16 @@ rewire([
       'eslint-plugin-import',
       'eslint-plugin-node',
       'eslint-plugin-promise',
-      ['eslint-plugin-import', ['eslint-import-resolver-node']]
-    ]
-  ]
+      ['eslint-plugin-import', ['eslint-import-resolver-node']],
+    ],
+  ],
 ])
 
 const start = async () => {
   process.argv.push('--config', require.resolve('@mishguru/eslint-config'))
   const ESLINT = resolveModulePath(
     'eslint/bin/eslint',
-    require.resolve('eslint')
+    require.resolve('eslint'),
   )
   return require(ESLINT)
 }

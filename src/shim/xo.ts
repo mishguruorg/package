@@ -19,16 +19,16 @@ rewire([
       'eslint-plugin-unicorn',
       'eslint-plugin-import',
       ['eslint-plugin-import', ['eslint-import-resolver-node']],
-      ['eslint-plugin-ava', ['espree']]
-    ]
-  ]
+      ['eslint-plugin-ava', ['espree']],
+    ],
+  ],
 ])
 
 const start = async () => {
   mockWithContext(
     './third-party.js',
     resolveModulePath('prettier', require.resolve('xo')),
-    (thirdParty: any) => {
+    (thirdParty: object) => {
       return {
         ...thirdParty,
         cosmiconfig: () => ({
@@ -42,12 +42,12 @@ const start = async () => {
               singleQuote: true,
               tabWidth: 2,
               trailingComma: 'es5',
-              useTabs: false
-            }
-          })
-        })
+              useTabs: false,
+            },
+          }),
+        }),
       }
-    }
+    },
   )
 
   mockWithContext('pkg-conf', require.resolve('xo'), () => ({
@@ -57,10 +57,10 @@ const start = async () => {
       prettier: true,
       rules: {
         'comma-dangle': ['error', 'only-multiline'],
-        'arrow-parens': ['error', 'always']
-      }
+        'arrow-parens': ['error', 'always'],
+      },
     }),
-    filepath: () => SRC_PATH
+    filepath: () => SRC_PATH,
   }))
 
   return require('xo/cli')
