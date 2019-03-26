@@ -3,7 +3,7 @@ import { dirname, join, resolve, relative } from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
 import globby from 'globby'
-import mkdirpCb from  'mkdirp'
+import mkdirpCb from 'mkdirp'
 
 const babel = require('@babel/core')
 

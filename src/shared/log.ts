@@ -37,7 +37,4 @@ const fmt = (
   return chalk.whiteBright(message)
 }
 
-export {
-  log,
-  fmt
-}
+export { log, fmt }
