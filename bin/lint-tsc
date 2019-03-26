@@ -1,6 +1,0 @@
-#!/usr/bin/env node
-
-require('../dist/cmd/lint-tsc').default().catch((err) => {
-  console.error(err)
-  process.exitCode = 1
-})

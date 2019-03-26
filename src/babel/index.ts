@@ -15,7 +15,7 @@ const transform = async (
   file: string,
   src: string,
   dest: string,
-  options: object
+  options: object,
 ) => {
   const srcPath = join(src, file)
   const destPath = join(dest, file)
@@ -31,7 +31,7 @@ const transform = async (
 const transformDirectory = async (
   src: string,
   dest: string,
-  options: object
+  options: object,
 ) => {
   src = resolve(src)
   dest = resolve(dest)
