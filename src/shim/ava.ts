@@ -24,8 +24,8 @@ const start = async () => {
           },
           files: relativeFiles
         }
-        return pkgConf.sync(pkgName, opts)
       }
+      return pkgConf.sync(pkgName, opts)
     },
     filepath: () => SRC_PATH
   }))

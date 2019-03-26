@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./bin/clean && tsc",
     "test": "./bin/test-tsc",
-    "lint": "./bin/lint",
+    "lint": "./bin/lint-tsc",
     "tidy": "./bin/tidy"
   },
   "bin": {
@@ -17,6 +17,7 @@
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
     "pkg-lint": "./bin/lint",
+    "pkg-lint-tsc": "./bin/lint-tsc",
     "pkg-test": "./bin/test",
     "pkg-test-tsc": "./bin/test-tsc",
     "pkg-tidy": "./bin/tidy"
@@ -40,6 +41,7 @@
     "@babel/preset-flow": "7.0.0",
     "@babel/register": "7.4.0",
     "@mishguru/eslint-config": "5.6.0",
+    "@mishguru/eslint-typescript-config": "^5.7.0",
     "ava": "1.4.0",
     "chalk": "2.4.2",
     "file-exists": "5.0.1",

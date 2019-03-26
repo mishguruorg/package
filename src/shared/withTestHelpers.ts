@@ -4,8 +4,6 @@ import fileExists from 'file-exists'
 import exec from '../shared/exec'
 import { log, fmt } from '../shared/log'
 
-const AVA_PATH = require.resolve('../shim/ava-tsc')
-
 const withTestHelpers = async (cb: () => Promise<void>) => {
   const beforeAll = join(process.cwd(), '/testHelpers/beforeAll.js')
   const afterAll = join(process.cwd(), '/testHelpers/afterAll.js')

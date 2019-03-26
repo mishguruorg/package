@@ -1,4 +1,3 @@
-import { SRC_PATH, DIST_PATH } from '../shared/constants'
 import { log, fmt } from '../shared/log'
 import exec from '../shared/exec'
 import clean from '../cmd/clean'

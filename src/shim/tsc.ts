@@ -1,7 +1,7 @@
 import { join, dirname, resolve } from 'path'
 import { mockWithContext } from 'unwire'
 
-import { SRC_PATH, DIST_PATH, TESTS_NAME } from '../shared/constants'
+import { SRC_PATH, DIST_PATH } from '../shared/constants'
 
 const TSCONFIG_PATH = join(dirname(resolve(SRC_PATH)), 'tsconfig.json')
 const TSCONFIG_DATA = `

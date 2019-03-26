@@ -21,8 +21,8 @@ const start = async () => {
           extensions: ['ts'],
           files: [...relativeFiles, `!${DIST_PATH}/`]
         }
-        return pkgConf.sync(pkgName, opts)
       }
+      return pkgConf.sync(pkgName, opts)
     },
     filepath: () => SRC_PATH
   }))
