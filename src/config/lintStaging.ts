@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{js,jsx}': ['pkg-tidy', 'pkg-lint --fix', 'git add'],
+  '*.{ts,js,jsx}': ['pkg-tidy', 'git add'],
 }
