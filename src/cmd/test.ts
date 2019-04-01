@@ -10,12 +10,14 @@ const AVA_PATH = USE_TSC
   : require.resolve('../shim/ava')
 
 const test = async () => {
+  const args = process.argv.slice(2)
+
   if (USE_TSC) {
+    process.argv = []
     await build()
   }
 
   await withTestHelpers(async () => {
-    const args = process.argv.slice(2)
     log(fmt`Running ${'ava'} ${args}`)
     await exec('node', AVA_PATH, ...args)
   })

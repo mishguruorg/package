@@ -1,9 +1,7 @@
 import globby from 'globby'
 import { resolve } from 'path'
 
-import { SRC_PATH, DIST_PATH, TESTS_NAME} from '../shared/constants'
-
-const TS_NODE_PATH = require.resolve('ts-node/register')
+import { SRC_PATH, DIST_PATH, TESTS_NAME } from '../shared/constants'
 
 const getConfig = async () => {
   const files = await globby(TESTS_NAME, { cwd: DIST_PATH })
