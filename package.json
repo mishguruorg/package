@@ -14,6 +14,7 @@
   "bin": {
     "pkg-precommit": "./bin/precommit",
     "pkg-build": "./bin/build",
+    "prepublish": "npm run build",
     "pkg-clean": "./bin/clean",
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
