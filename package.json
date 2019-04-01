@@ -9,7 +9,6 @@
     "test": "npm run build && ava ./dist/**/*.spec.js",
     "lint": "./bin/lint",
     "tidy": "./bin/tidy",
-    "precommit": "./bin/precommit",
     "prepublish": "npm run build"
   },
   "bin": {
@@ -54,11 +53,13 @@
     "nyc": "13.3.0",
     "pkg-conf": "3.0.0",
     "prettier": "1.16.4",
+    "read-pkg-up": "5.0.0",
     "typescript": "3.4.1",
     "unwire": "6.0.0"
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
-    "@types/pkg-conf": "3.0.0"
+    "@types/pkg-conf": "3.0.0",
+    "@types/read-pkg-up": "3.0.1"
   }
 }
