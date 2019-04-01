@@ -9,12 +9,12 @@
     "test": "npm run build && ava ./dist/**/*.spec.js",
     "lint": "./bin/lint",
     "tidy": "./bin/tidy",
-    "precommit": "./bin/precommit"
+    "precommit": "./bin/precommit",
+    "prepublish": "npm run build"
   },
   "bin": {
     "pkg-precommit": "./bin/precommit",
     "pkg-build": "./bin/build",
-    "prepublish": "npm run build",
     "pkg-clean": "./bin/clean",
     "pkg-coverage": "./bin/coverage",
     "pkg-flow": "./bin/flow",
