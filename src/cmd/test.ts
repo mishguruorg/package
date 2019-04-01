@@ -1,3 +1,5 @@
+import build from './build'
+
 import withTestHelpers from '../shared/withTestHelpers'
 import exec from '../shared/exec'
 import { log, fmt } from '../shared/log'
@@ -8,6 +10,10 @@ const AVA_PATH = USE_TSC
   : require.resolve('../shim/ava')
 
 const test = async () => {
+  if (USE_TSC) {
+    await build()
+  }
+
   await withTestHelpers(async () => {
     const args = process.argv.slice(2)
     log(fmt`Running ${'ava'} ${args}`)
