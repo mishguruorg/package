@@ -53,7 +53,6 @@
     "nyc": "13.3.0",
     "pkg-conf": "3.0.0",
     "prettier": "1.16.4",
-    "ts-node": "8.0.3",
     "typescript": "3.4.1",
     "unwire": "6.0.0"
   },
