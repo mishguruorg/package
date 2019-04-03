@@ -16,7 +16,6 @@ rewire([
       'eslint-plugin-react',
       'eslint-plugin-standard',
       'babel-eslint',
-      'eslint-config-standard-babel',
       'eslint-config-standard-jsx',
       'eslint-config-standard',
       'eslint-plugin-import',
