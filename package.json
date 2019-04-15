@@ -62,5 +62,10 @@
     "@types/mkdirp": "0.5.2",
     "@types/pkg-conf": "3.0.0",
     "@types/read-pkg-up": "3.0.1"
+  },
+  "release-it": {
+    "scripts": {
+      "beforeStart": "npm run build"
+    }
   }
 }
