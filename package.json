@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
+    "@types/node": "^11.13.4",
     "@types/pkg-conf": "3.0.0",
     "@types/read-pkg-up": "3.0.1"
   },
