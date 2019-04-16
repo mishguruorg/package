@@ -14,7 +14,7 @@ Copy the following into your `package.json`.
 "scripts": {
   "build": "pkg-build",
   "lint": "pkg-lint",
-  "tidy": "pkg-tidy"
+  "tidy": "pkg-tidy",
   "test": "NODE_ENV=test pkg-test",
   "coverage": "NODE_ENV=test pkg-coverage",
   "precommit": "pkg-precommit"
@@ -29,6 +29,11 @@ To enable typescipt support, set the `types` property in your `package.json`.
 "main": "./dist/index.js",
 "types": "./dist/index.d.ts",
 ```
+
+If you are manually adding types for a non-typescript project, you should set
+`"types": "types.d.ts"` and keep the types in the root of your project.
+`@mishguru/package` will not run in typescript mode when building/testing your
+project.
 
 ## Changelog
 
