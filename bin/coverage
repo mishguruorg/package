@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('../src/cmd/coverage')().catch((err) => {
+require('../dist/cmd/coverage').default().catch((err) => {
   console.error(err)
   process.exitCode = 1
 })

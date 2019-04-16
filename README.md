@@ -8,23 +8,33 @@ npm install --save-dev @mishguru/package
 
 ## Recommended Scripts
 
-Copy same (or all) of the following into your `package.json`.
+Copy the following into your `package.json`.
 
-```
+```json
 "scripts": {
-  "precommit": "pkg-precommit",
   "build": "pkg-build",
-  "prepublish": "npm run build",
-  "postpublish": "git push --tags",
-  "flow": "pkg-flow",
   "lint": "pkg-lint",
-  "test": "NODE_ENV=test_local pkg-test",
-  "coverage": "NODE_ENV=test_local pkg-coverage",
   "tidy": "pkg-tidy"
+  "test": "NODE_ENV=test pkg-test",
+  "coverage": "NODE_ENV=test pkg-coverage",
+  "precommit": "pkg-precommit"
 }
 ```
 
+## Using Typescript
+
+To enable typescipt support, set the `types` property in your `package.json`.
+
+```json
+"main": "./dist/index.js",
+"types": "./dist/index.d.ts",
+```
+
 ## Changelog
+
+### 6.0.0
+
+Add typescript support.
 
 ### 5.0.0
 - Husky got a major bump update (0.14.3 => 1.1.1)

@@ -1,13 +1,10 @@
-/* @flow */
+import { resolveModulePath } from 'unwire'
 
-// $FlowFixMe
 const Module = require('module')
-
-const { resolveModulePath } = require('unwire')
 
 const REWIRE_FINDPATH = new Map()
 const findPath = Module._findPath
-Module._findPath = (...args) => {
+Module._findPath = (...args: string[]) => {
   const [path] = args
   if (REWIRE_FINDPATH.has(path)) {
     return REWIRE_FINDPATH.get(path)
@@ -17,7 +14,7 @@ Module._findPath = (...args) => {
 
 const REWIRE_LOAD = new Map()
 const load = Module._load
-Module._load = (...args) => {
+Module._load = (...args: string[]) => {
   const [path] = args
   if (REWIRE_LOAD.has(path)) {
     return REWIRE_LOAD.get(path)
@@ -25,14 +22,13 @@ Module._load = (...args) => {
   return load(...args)
 }
 
-/* ::
-type $tree = [string, Array<string | $tree>]
-*/
+type PathTree = [string, PathTreeArray]
+interface PathTreeArray extends Array<string | PathTree> {}
 
 const rewireChildren = (
-  context /* : string */,
-  parent /* : string */,
-  children /* : Array<string | $tree> */
+  context: string,
+  parent: string,
+  children: PathTreeArray,
 ) => {
   const parentPath = resolveModulePath(parent, context)
 
@@ -44,7 +40,6 @@ const rewireChildren = (
 
     const childPath = resolveModulePath(child, parentPath)
 
-    // $FlowFixMe
     const childModule = require(childPath)
 
     REWIRE_FINDPATH.set(child, childPath)
@@ -52,11 +47,11 @@ const rewireChildren = (
   })
 }
 
-const rewire = (dependencyTree /* : Array<$tree> */) => {
+const rewire = (dependencyTree: PathTree[]) => {
   dependencyTree.forEach((item) => {
     const [parent, children] = item
     rewireChildren(__dirname, parent, children)
   })
 }
 
-module.exports = rewire
+export default rewire

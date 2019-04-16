@@ -1,14 +1,12 @@
-/* @flow */
+import chalk from 'chalk'
 
-const chalk = require('chalk')
+import { SRC_PATH, DIST_PATH } from './constants'
 
-const { SRC_PATH, DIST_PATH } = require('./constants')
-
-const log = (...args /* : Array<string> */) => console.log(...args)
+const log = (...args: string[]) => console.log(...args)
 
 const fmt = (
-  strings /* : Array<string> */,
-  ...values /* : Array<string> */
+  strings: TemplateStringsArray,
+  ...values: (string | string[])[]
 ) => {
   const message = strings.reduce((total, current, index) => {
     total += current
@@ -39,7 +37,4 @@ const fmt = (
   return chalk.whiteBright(message)
 }
 
-module.exports = {
-  log,
-  fmt
-}
+export { log, fmt }

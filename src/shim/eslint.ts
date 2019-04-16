@@ -1,8 +1,6 @@
-/* @flow */
+import { resolveModulePath } from 'unwire'
 
-const { resolveModulePath } = require('unwire')
-
-const rewire = require('../shared/rewire')
+import rewire from '../shared/rewire'
 
 // This is where the magic happens! rewire() will go through these dependencies
 // and make sure they are all available from the current directory
@@ -18,22 +16,21 @@ rewire([
       'eslint-plugin-react',
       'eslint-plugin-standard',
       'babel-eslint',
-      'eslint-config-standard-babel',
       'eslint-config-standard-jsx',
       'eslint-config-standard',
       'eslint-plugin-import',
       'eslint-plugin-node',
       'eslint-plugin-promise',
-      ['eslint-plugin-import', ['eslint-import-resolver-node']]
-    ]
-  ]
+      ['eslint-plugin-import', ['eslint-import-resolver-node']],
+    ],
+  ],
 ])
 
 const start = async () => {
   process.argv.push('--config', require.resolve('@mishguru/eslint-config'))
   const ESLINT = resolveModulePath(
     'eslint/bin/eslint',
-    require.resolve('eslint')
+    require.resolve('eslint'),
   )
   return require(ESLINT)
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('../src/cmd/precommit')().catch((err) => {
+require('../dist/cmd/precommit').default().catch((err) => {
   console.error(err)
   process.exitCode = 1
 })

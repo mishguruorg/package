@@ -1,22 +1,21 @@
-/* @flow */
+import { promisify } from 'util'
+import { dirname, join, resolve, relative } from 'path'
+import fs from 'fs'
+import chalk from 'chalk'
+import globby from 'globby'
+import mkdirpCb from 'mkdirp'
 
-const { promisify } = require('util')
-const { dirname, join, resolve, relative } = require('path')
-const fs = require('fs')
-const chalk = require('chalk')
 const babel = require('@babel/core')
-const globby = require('globby')
-const mkdirpCb = require('mkdirp')
 
 const mkdirp = promisify(mkdirpCb)
 const writeFile = promisify(fs.writeFile)
 const transformFile = promisify(babel.transformFile)
 
 const transform = async (
-  file /* : string */,
-  src /* : string */,
-  dest /* : string */,
-  options /* : Object */
+  file: string,
+  src: string,
+  dest: string,
+  options: object,
 ) => {
   const srcPath = join(src, file)
   const destPath = join(dest, file)
@@ -30,17 +29,17 @@ const transform = async (
 }
 
 const transformDirectory = async (
-  src /* : string */,
-  dest /* : string */,
-  options /* : Object */
+  src: string,
+  dest: string,
+  options: object,
 ) => {
   src = resolve(src)
   dest = resolve(dest)
 
-  const transformFile = (file) => {
+  const transformFile = (file: string) => {
     return transform(file, src, dest, {
       filename: file,
-      ...options
+      ...options,
     })
   }
 
@@ -49,4 +48,4 @@ const transformDirectory = async (
   return Promise.all(files.map(transformFile))
 }
 
-module.exports = transformDirectory
+export default transformDirectory
