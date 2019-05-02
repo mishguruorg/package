@@ -2,7 +2,7 @@ import { join, dirname, resolve } from 'path'
 import { mockWithContext } from 'unwire'
 
 import { SRC_PATH } from '../shared/constants'
-import tsconfigJSON from '../config/tsconfig'
+import createTSConfig from '../config/tsconfig'
 
 const TSCONFIG_PATH = join(dirname(resolve(SRC_PATH)), 'tsconfig.json')
 
@@ -22,7 +22,9 @@ const start = async () => {
     },
     readFileSync: (path: string, options: object) => {
       if (path === TSCONFIG_PATH) {
-        return Buffer.from(tsconfigJSON, 'utf8')
+        const configString = createTSConfig()
+        const configBuffer = Buffer.from(configString, 'utf8')
+        return configBuffer
       }
       return fs.readFileSync(path, options)
     },
