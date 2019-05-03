@@ -30,10 +30,28 @@ To enable typescipt support, set the `types` property in your `package.json`.
 "types": "./dist/index.d.ts",
 ```
 
-If you are manually adding types for a non-typescript project, you should set
-`"types": "types.d.ts"` and keep the types in the root of your project.
-`@mishguru/package` will not run in typescript mode when building/testing your
-project.
+### Type declarations
+
+If you need to use a 3rd party library that doesn't have typescript support,
+you can provide your own type declarations.
+
+There are some strict rules you need to follow for this to work:
+
+1. You must only mock one dependency per file.
+1. You must place the file inside the `./src/types/` folder.
+2. The filename must be the same as the dependency name.
+3. The extension must be `.d.ts`.
+
+For example, if you are providing types for `file-exists`, the types must be
+saved in `./src/types/file-exists.d.ts.`
+
+### Providing Typescript types for a project written in JS
+
+If you are manually adding types for a non-typescript project, you must keep
+your types in the root of your project, in a file named `types.d.ts`.
+
+`@mishguru/package` will not use the typescript compiler if your package.json
+contains the value: `"types": "types.d.ts"`.
 
 ## Lifecycle Test Helpers
 
