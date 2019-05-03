@@ -15,7 +15,9 @@ const test = async () => {
   const args = process.argv.slice(2)
 
   if (USE_TSC) {
-    if (args.length > 0) {
+    const fileArgs = args.filter((arg) => arg.startsWith('-') === false)
+
+    if (fileArgs.length > 0) {
       avaPath = AVA_TSC_PATH
     } else {
       process.argv = []

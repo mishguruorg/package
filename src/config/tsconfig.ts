@@ -1,24 +1,43 @@
+import globby from 'globby'
+import { join, basename } from 'path'
+
 import { SRC_PATH, DIST_PATH } from '../shared/constants'
 
-const config = {
-  compilerOptions: {
-    baseUrl: '.',
-    declaration: true,
-    esModuleInterop: true,
-    module: 'commonjs',
-    moduleResolution: 'node',
-    noImplicitAny: true,
-    outDir: DIST_PATH,
-    resolveJsonModule: true,
-    sourceMap: true,
-    target: 'es2018',
-    paths: {
-      '*': ['node_modules/*', `${SRC_PATH}/types/*`],
+const D_TS_PATH = `./types/*.d.ts`
+
+const createTSConfig = (): string => {
+  const declarationFiles = globby.sync(D_TS_PATH, { cwd: SRC_PATH })
+
+  const paths: Record<string, string[]> = {
+    '*': ['node_modules/*', `${SRC_PATH}/types/*`],
+  }
+
+  for (const filepath of declarationFiles) {
+    const moduleName = basename(filepath)
+      .replace(/\.d\.ts$/, '')
+    paths[moduleName] = [join(SRC_PATH, filepath)]
+  }
+
+  const config = {
+    compilerOptions: {
+      baseUrl: '.',
+      declaration: true,
+      esModuleInterop: true,
+      module: 'commonjs',
+      moduleResolution: 'node',
+      noImplicitAny: true,
+      outDir: DIST_PATH,
+      resolveJsonModule: true,
+      sourceMap: true,
+      target: 'es2018',
+      paths,
     },
-  },
-  include: [`${SRC_PATH}/**/*`],
+    include: [`${SRC_PATH}/**/*`],
+  }
+
+  const configString = JSON.stringify(config, null, 2)
+
+  return configString
 }
 
-const tsconfigJSON = JSON.stringify(config, null, 2)
-
-export default tsconfigJSON
+export default createTSConfig
