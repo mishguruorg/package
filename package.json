@@ -1,6 +1,6 @@
 {
   "name": "@mishguru/package",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "Utils for creating, building and testing NPM packages",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
