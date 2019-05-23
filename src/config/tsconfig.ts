@@ -15,6 +15,7 @@ const createTSConfig = (): string => {
   for (const filepath of declarationFiles) {
     const moduleName = basename(filepath)
       .replace(/\.d\.ts$/, '')
+      .replace('-', '/')
     paths[moduleName] = [join(SRC_PATH, filepath)]
   }
 
