@@ -52,14 +52,14 @@
     "nyc": "14.1.1",
     "pkg-conf": "3.1.0",
     "prettier": "1.17.1",
-    "read-pkg-up": "5.0.0",
+    "read-pkg-up": "6.0.0",
     "ts-node": "8.2.0",
     "typescript": "3.5.1",
     "unwire": "6.1.0"
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
-    "@types/node": "11.13.12",
+    "@types/node": "12.0.4",
     "@types/pkg-conf": "3.0.0",
     "@types/read-pkg-up": "3.0.1"
   },
