@@ -25,6 +25,7 @@ const createTSConfig = (): string => {
       diagnostics: true,
       esModuleInterop: true,
       forceConsistentCasingInFileNames: true,
+      incremental: true,
       module: 'commonjs',
       moduleResolution: 'node',
       noImplicitAny: true,
