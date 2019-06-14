@@ -8,6 +8,7 @@
     "build": "rm -rf ./dist && tsc",
     "test": "npm run build && ava ./dist/**/*.spec.js",
     "lint": "./bin/lint",
+    "prepublish": "npm run build",
     "tidy": "./bin/tidy"
   },
   "bin": {
