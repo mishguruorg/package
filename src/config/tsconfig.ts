@@ -27,7 +27,6 @@ const createTSConfig = (): string => {
       forceConsistentCasingInFileNames: true,
       module: 'commonjs',
       moduleResolution: 'node',
-      noEmitOnError: true,
       noImplicitAny: true,
       noImplicitReturns: true,
       noUnusedLocals: true,
