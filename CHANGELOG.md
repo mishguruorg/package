@@ -3,7 +3,7 @@
 ## 7.0.0
 - Updates to ava@2
 - Updates to read-pkg-up@6
-- Enabled following flags for typescript compiler: `forceConsistentCasingInFileNames`, `incremental`, `noImplicitReturns`, `noUnusedLocals`, `noUnusedParameters`, `removeComments` and `diagnostics`
+- Enabled following flags for typescript compiler: `forceConsistentCasingInFileNames`, `incremental`, `noUnusedLocals`, `noUnusedParameters`, `removeComments` and `diagnostics`
 
 ## 6.0.0
 
