@@ -22,15 +22,22 @@ const createTSConfig = (): string => {
     compilerOptions: {
       baseUrl: '.',
       declaration: true,
+      diagnostics: true,
       esModuleInterop: true,
+      forceConsistentCasingInFileNames: true,
+      incremental: true,
       module: 'commonjs',
       moduleResolution: 'node',
       noImplicitAny: true,
+      noUnusedLocals: true,
+      noUnusedParameters: true,
       outDir: DIST_PATH,
+      paths,
+      removeComments: true,
       resolveJsonModule: true,
       sourceMap: true,
+      strict: false, // we should turn this on when data is ready :/
       target: 'es2018',
-      paths,
     },
     include: [`${SRC_PATH}/**/*`],
   }
