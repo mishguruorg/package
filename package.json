@@ -44,7 +44,7 @@
     "ava": "2.1.0",
     "chalk": "2.4.2",
     "file-exists": "5.0.1",
-    "flow-bin": "0.101.0",
+    "flow-bin": "0.101.1",
     "flow-copy-source": "2.0.6",
     "globby": "9.2.0",
     "husky": "2.4.1",
@@ -54,13 +54,13 @@
     "pkg-conf": "3.1.0",
     "prettier": "1.18.2",
     "read-pkg-up": "6.0.0",
-    "ts-node": "8.2.0",
+    "ts-node": "8.3.0",
     "typescript": "3.5.2",
     "unwire": "6.1.0"
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
-    "@types/node": "12.0.8",
+    "@types/node": "12.0.10",
     "@types/pkg-conf": "3.0.0",
     "@types/read-pkg-up": "3.0.1"
   },
