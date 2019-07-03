@@ -9,6 +9,7 @@
     "test": "npm run build && ava ./dist/**/*.spec.js",
     "lint": "./bin/lint",
     "prepublish": "npm run build",
+    "postpublish": "git push origin master --tags",
     "tidy": "./bin/tidy"
   },
   "bin": {
