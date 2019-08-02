@@ -45,11 +45,11 @@
     "ava": "2.2.0",
     "chalk": "2.4.2",
     "file-exists": "5.0.1",
-    "flow-bin": "0.103.0",
+    "flow-bin": "0.104.0",
     "flow-copy-source": "2.0.7",
-    "globby": "9.2.0",
-    "husky": "2.7.0",
-    "lint-staged": "8.2.1",
+    "globby": "10.0.1",
+    "husky": "3.0.2",
+    "lint-staged": "9.2.1",
     "mkdirp": "0.5.1",
     "nyc": "14.1.1",
     "pkg-conf": "3.1.0",
@@ -61,9 +61,9 @@
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
-    "@types/node": "12.6.8",
+    "@types/node": "12.6.9",
     "@types/pkg-conf": "3.0.0",
-    "@types/read-pkg-up": "3.0.1"
+    "@types/read-pkg-up": "6.0.0"
   },
   "release-it": {
     "scripts": {
