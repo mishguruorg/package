@@ -4,7 +4,7 @@ import { join, basename } from 'path'
 import { SRC_PATH, DIST_PATH } from '../shared/constants'
 
 const D_TS_PATH = join(SRC_PATH, 'types')
-const D_TS_GLOB = `./*.d.ts`
+const D_TS_GLOB = `./**/*.d.ts`
 
 const createTSConfig = (): string => {
   const declarationFiles = globby.sync(D_TS_GLOB, { cwd: D_TS_PATH })
