@@ -3,19 +3,19 @@ import { join, basename } from 'path'
 
 import { SRC_PATH, DIST_PATH } from '../shared/constants'
 
-const D_TS_PATH = `./types/*.d.ts`
+const D_TS_PATH = join(SRC_PATH, 'types')
+const D_TS_GLOB = `./*.d.ts`
 
 const createTSConfig = (): string => {
-  const declarationFiles = globby.sync(D_TS_PATH, { cwd: SRC_PATH })
+  const declarationFiles = globby.sync(D_TS_GLOB, { cwd: D_TS_PATH })
 
   const paths: Record<string, string[]> = {
-    '*': ['node_modules/*', `${SRC_PATH}/types/*`],
+    '*': ['node_modules/*', `${D_TS_PATH}/*`],
   }
 
   for (const filepath of declarationFiles) {
-    const moduleName = basename(filepath)
-      .replace(/\.d\.ts$/, '')
-    paths[moduleName] = [join(SRC_PATH, filepath)]
+    const moduleName = filepath.replace(/\.d\.ts$/, '')
+    paths[moduleName] = [join(D_TS_PATH, filepath)]
   }
 
   const config = {
