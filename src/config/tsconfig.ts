@@ -29,7 +29,7 @@ const createTSConfig = (): string => {
       module: 'commonjs',
       moduleResolution: 'node',
       noImplicitAny: true,
-      noUnusedLocals: true,
+      noUnusedLocals: false,
       noUnusedParameters: true,
       outDir: DIST_PATH,
       paths,
