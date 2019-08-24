@@ -1,5 +1,5 @@
 import globby from 'globby'
-import { join, basename } from 'path'
+import { join } from 'path'
 
 import { SRC_PATH, DIST_PATH } from '../shared/constants'
 
@@ -38,6 +38,7 @@ const createTSConfig = (): string => {
       sourceMap: true,
       strict: false, // we should turn this on when data is ready :/
       target: 'es2018',
+      lib: ['es2019'],
     },
     include: [`${SRC_PATH}/**/*`],
   }
