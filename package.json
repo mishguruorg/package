@@ -40,12 +40,12 @@
     "@babel/preset-env": "7.5.5",
     "@babel/preset-flow": "7.0.0",
     "@babel/register": "7.5.5",
-    "@mishguru/eslint-config": "5.8.0",
+    "@mishguru/eslint-config": "^5.9.0",
     "@mishguru/eslint-typescript-config": "5.14.1",
     "ava": "2.3.0",
     "chalk": "2.4.2",
     "file-exists": "5.0.1",
-    "flow-bin": "0.106.2",
+    "flow-bin": "^0.106.3",
     "flow-copy-source": "2.0.8",
     "globby": "10.0.1",
     "husky": "3.0.4",
@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@types/mkdirp": "0.5.2",
-    "@types/node": "12.7.2",
+    "@types/node": "^12.7.3",
     "@types/pkg-conf": "3.0.0",
     "@types/read-pkg-up": "6.0.0"
   },
