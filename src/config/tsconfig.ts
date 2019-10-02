@@ -38,7 +38,7 @@ const createTSConfig = (): string => {
       sourceMap: true,
       strict: false, // we should turn this on when data is ready :/
       target: 'es2018',
-      lib: ['es2019'],
+      lib: ['es2019', 'DOM', 'DOM.Iterable'],
     },
     include: [`${SRC_PATH}/**/*`],
   }
