@@ -1,6 +1,6 @@
 import readPkgUp from 'read-pkg-up'
 
-const { package: pkg } = readPkgUp.sync()
+const { packageJson: pkg } = readPkgUp.sync()
 
 export const USE_TSC = pkg.types != null && pkg.types !== 'types.d.ts'
 export const SRC_PATH = pkg.srcPath || 'src'

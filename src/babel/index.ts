@@ -3,11 +3,10 @@ import { dirname, join, resolve, relative } from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
 import globby from 'globby'
-import mkdirpCb from 'mkdirp'
+import mkdirp from 'mkdirp'
 
 const babel = require('@babel/core')
 
-const mkdirp = promisify(mkdirpCb)
 const writeFile = promisify(fs.writeFile)
 const transformFile = promisify(babel.transformFile)
 
@@ -15,7 +14,7 @@ const transform = async (
   file: string,
   src: string,
   dest: string,
-  options: object,
+  options: object
 ) => {
   const srcPath = join(src, file)
   const destPath = join(dest, file)
@@ -31,7 +30,7 @@ const transform = async (
 const transformDirectory = async (
   src: string,
   dest: string,
-  options: object,
+  options: object
 ) => {
   src = resolve(src)
   dest = resolve(dest)
