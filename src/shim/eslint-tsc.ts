@@ -10,18 +10,10 @@ rewire([
     [
       '@typescript-eslint/eslint-plugin',
       '@typescript-eslint/parser',
-      'eslint',
-      'eslint-config-standard',
-      'eslint-config-standard-jsx',
-      'eslint-plugin-ava',
-      'eslint-plugin-import',
+      // 'eslint-plugin-ava', <-- doesn't play nice with rewire, no idea why
       'eslint-plugin-mishguru',
-      'eslint-plugin-node',
-      'eslint-plugin-promise',
-      'eslint-plugin-react',
-      'eslint-plugin-standard',
+      'eslint',
       'typescript',
-      ['eslint-plugin-import', ['eslint-import-resolver-node']],
     ],
   ],
 ])

@@ -5,6 +5,7 @@ import chalk from 'chalk'
 import globby from 'globby'
 import mkdirp from 'mkdirp'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const babel = require('@babel/core')
 
 const writeFile = promisify(fs.writeFile)
@@ -14,7 +15,7 @@ const transform = async (
   file: string,
   src: string,
   dest: string,
-  options: object
+  options: object,
 ) => {
   const srcPath = join(src, file)
   const destPath = join(dest, file)
@@ -30,7 +31,7 @@ const transform = async (
 const transformDirectory = async (
   src: string,
   dest: string,
-  options: object
+  options: object,
 ) => {
   src = resolve(src)
   dest = resolve(dest)
