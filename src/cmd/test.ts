@@ -16,12 +16,15 @@ const test = async () => {
 
   if (USE_TSC) {
     const fileArgs = args.filter((arg) => arg.startsWith('-') === false)
+    const shouldBuild = args.includes('--pkg-skip-build') === false
 
     if (fileArgs.length > 0) {
       avaPath = AVA_TSC_PATH
     } else {
       process.argv = []
-      await build()
+      if (shouldBuild) {
+        await build()
+      }
       avaPath = AVA_PLAIN_PATH
     }
   }
