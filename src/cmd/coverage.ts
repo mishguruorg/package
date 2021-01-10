@@ -4,7 +4,7 @@ import { log, fmt } from '../shared/log'
 const NYC_PATH = require.resolve('nyc/bin/nyc')
 const TEST_PATH = require.resolve('../../bin/test')
 
-const lint = async () => {
+const lint = async (): Promise<void> => {
   log(fmt`Running ${'nyc'}`)
   await exec(NYC_PATH, TEST_PATH)
 

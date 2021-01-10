@@ -10,7 +10,7 @@ import flowCopySource from 'flow-copy-source'
 
 const TSC_SHIM_PATH = require.resolve('../shim/tsc')
 
-const build = async () => {
+const build = async (): Promise<void> => {
   await clean()
 
   log(fmt`Building from ${SRC_PATH} to ${DIST_PATH} directory`)

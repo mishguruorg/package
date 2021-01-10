@@ -3,8 +3,6 @@ import * as pkgConf from 'pkg-conf'
 import { Config } from 'pkg-conf'
 import readPkgUp from 'read-pkg-up'
 
-import { SRC_PATH } from '../shared/constants'
-
 import getConfig from '../config/ava-babel'
 
 const start = async () => {
@@ -12,7 +10,7 @@ const start = async () => {
   const filepath = readPkgUp.sync().path
 
   mockWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
-    sync: (pkgName: string, opts: object) => {
+    sync: (pkgName: string, opts: Record<string, unknown>) => {
       if (pkgName === 'ava') {
         return config
       }

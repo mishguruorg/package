@@ -15,7 +15,7 @@ const transform = async (
   file: string,
   src: string,
   dest: string,
-  options: object,
+  options: Record<string, unknown>,
 ) => {
   const srcPath = join(src, file)
   const destPath = join(dest, file)
@@ -31,8 +31,8 @@ const transform = async (
 const transformDirectory = async (
   src: string,
   dest: string,
-  options: object,
-) => {
+  options: Record<string, unknown>,
+): Promise<void> => {
   src = resolve(src)
   dest = resolve(dest)
 
@@ -45,7 +45,7 @@ const transformDirectory = async (
 
   const files = await globby('**/*.js', { cwd: src })
 
-  return Promise.all(files.map(transformFile))
+  await Promise.all(files.map(transformFile))
 }
 
 export default transformDirectory

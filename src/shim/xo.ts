@@ -28,7 +28,7 @@ const start = async () => {
   mockWithContext(
     './third-party.js',
     resolveModulePath('prettier', require.resolve('xo')),
-    (thirdParty: object) => {
+    (thirdParty: Record<string, unknown>) => {
       return {
         ...thirdParty,
         cosmiconfig: () => ({

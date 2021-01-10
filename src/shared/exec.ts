@@ -1,6 +1,6 @@
 import { spawn } from 'child_process'
 
-const exec = (cmd: string, ...args: string[]) => {
+const exec = (cmd: string, ...args: string[]): Promise<void> => {
   return new Promise<void>((resolve, reject) => {
     const error = new Error(`"${cmd} ${args.join(' ')}" failed!`)
 

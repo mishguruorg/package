@@ -14,13 +14,13 @@ const MOCK_FILE = {
 
 mockWithContext('fs', require.resolve('typescript'), (fs) => ({
   ...fs,
-  statSync: (path: string, options: object) => {
+  statSync: (path: string, options: Record<string, unknown>) => {
     if (path === TSCONFIG_PATH) {
       return MOCK_FILE
     }
     return fs.statSync(path, options)
   },
-  readFileSync: (path: string, options: object) => {
+  readFileSync: (path: string, options: Record<string, unknown>) => {
     if (path === TSCONFIG_PATH) {
       const configString = createTSConfig()
       const configBuffer = Buffer.from(configString, 'utf8')

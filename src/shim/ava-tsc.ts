@@ -3,8 +3,6 @@ import * as pkgConf from 'pkg-conf'
 import { Config } from 'pkg-conf'
 import readPkgUp from 'read-pkg-up'
 
-import { SRC_PATH } from '../shared/constants'
-
 import getAVAConfig from '../config/ava-tsc'
 
 console.log('Using AVA with ts-node')
@@ -14,7 +12,7 @@ const start = async () => {
   const filepath = readPkgUp.sync().path
 
   mockWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
-    sync: (pkgName: string, opts: object) => {
+    sync: (pkgName: string, opts: Record<string, unknown>) => {
       if (pkgName === 'ava') {
         return avaConfig
       }

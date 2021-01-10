@@ -9,7 +9,7 @@ const AVA_TSC_PATH = require.resolve('../shim/ava-tsc')
 const AVA_BABEL_PATH = require.resolve('../shim/ava-babel')
 const AVA_PLAIN_PATH = require.resolve('../shim/ava-plain')
 
-const test = async () => {
+const test = async (): Promise<void> => {
   let avaPath = AVA_BABEL_PATH
 
   const args = process.argv.slice(2)

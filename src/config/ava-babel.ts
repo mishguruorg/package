@@ -6,7 +6,17 @@ import BABEL_CONFIG from '../babel/config'
 
 const BABEL_REGISTER_PATH = require.resolve('../babel/register')
 
-const getConfig = async () => {
+type Config = {
+  cache: boolean,
+  verbose: boolean,
+  require: string[],
+  babel: {
+    testOptions: Record<string, unknown>,
+  },
+  files: string[],
+}
+
+const getConfig = async (): Promise<Config> => {
   const files = await globby(TESTS_NAME, { cwd: SRC_PATH })
   const relativeFiles = files.map((file) => resolve(SRC_PATH, file))
 

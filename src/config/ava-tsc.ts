@@ -5,7 +5,14 @@ import { SRC_PATH, TESTS_NAME, DIST_PATH } from '../shared/constants'
 
 const TS_NODE_PATH = require.resolve('../shim/ts-node')
 
-const getConfig = async () => {
+type Config = {
+  verbose: boolean,
+  require: string[],
+  extensions: string[],
+  files: string[],
+}
+
+const getConfig = async (): Promise<Config> => {
   const files = await globby(TESTS_NAME, { cwd: SRC_PATH })
   const relativeFiles = files.map((file) => resolve(SRC_PATH, file))
 

@@ -10,7 +10,7 @@ const LINTER_PATH = USE_TSC
   ? require.resolve('../shim/eslint-tsc')
   : require.resolve('../shim/eslint')
 
-const prettier = async () => {
+const prettier = async (): Promise<void> => {
   const args = process.argv.slice(2)
   log(fmt`Running ${'prettier'} ${args}`)
 
