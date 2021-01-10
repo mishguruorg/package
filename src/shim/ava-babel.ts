@@ -1,5 +1,7 @@
 import { mockWithContext } from 'unwire'
 import * as pkgConf from 'pkg-conf'
+import { Config } from 'pkg-conf'
+import readPkgUp from 'read-pkg-up'
 
 import { SRC_PATH } from '../shared/constants'
 
@@ -7,6 +9,8 @@ import getConfig from '../config/ava-babel'
 
 const start = async () => {
   const config = await getConfig()
+  const filepath = readPkgUp.sync().path
+
   mockWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
     sync: (pkgName: string, opts: object) => {
       if (pkgName === 'ava') {
@@ -14,7 +18,12 @@ const start = async () => {
       }
       return pkgConf.sync(pkgName, opts)
     },
-    filepath: () => SRC_PATH,
+    filepath: (c: Config) => {
+      if (c === config) {
+        return filepath
+      }
+      return pkgConf.filepath(c)
+    },
   }))
 
   return require('ava/cli')

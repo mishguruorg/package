@@ -1,5 +1,7 @@
 import { mockWithContext } from 'unwire'
 import * as pkgConf from 'pkg-conf'
+import { Config } from 'pkg-conf'
+import readPkgUp from 'read-pkg-up'
 
 import { SRC_PATH } from '../shared/constants'
 
@@ -9,6 +11,7 @@ console.log('Using AVA with ts-node')
 
 const start = async () => {
   const avaConfig = await getAVAConfig()
+  const filepath = readPkgUp.sync().path
 
   mockWithContext('pkg-conf', require.resolve('ava/cli'), () => ({
     sync: (pkgName: string, opts: object) => {
@@ -17,7 +20,12 @@ const start = async () => {
       }
       return pkgConf.sync(pkgName, opts)
     },
-    filepath: () => SRC_PATH,
+    filepath: (c: Config) => {
+      if (c === avaConfig) {
+        return filepath
+      }
+      return pkgConf.filepath(c)
+    },
   }))
 
   return require('ava/cli')
