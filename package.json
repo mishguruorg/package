@@ -7,6 +7,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "test": "npm run build && ava ./dist/**/*.spec.js",
+    "test:pkg": "tsc && ./bin/test --pkg-skip-build",
     "lint": "./bin/lint",
     "prepublish": "npm run build",
     "postpublish": "git push origin master --tags",
