@@ -7,8 +7,6 @@ import getAVAConfig from '../config/ava-tsc'
 
 console.log('Using AVA with ts-node')
 
-console.dir(pkgConf)
-
 const start = async () => {
   const config = await getAVAConfig()
   const filepath = readPkgUp.sync().path
