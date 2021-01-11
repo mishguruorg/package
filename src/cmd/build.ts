@@ -2,8 +2,6 @@ import { USE_TSC, SRC_PATH, DIST_PATH } from '../shared/constants'
 import { log, fmt } from '../shared/log'
 import exec from '../shared/exec'
 
-import clean from '../cmd/clean'
-
 import babel from '../babel'
 import BABEL_CONFIG from '../babel/config'
 import flowCopySource from 'flow-copy-source'
@@ -11,8 +9,6 @@ import flowCopySource from 'flow-copy-source'
 const TSC_SHIM_PATH = require.resolve('../shim/tsc')
 
 const build = async (): Promise<void> => {
-  await clean()
-
   log(fmt`Building from ${SRC_PATH} to ${DIST_PATH} directory`)
 
   if (USE_TSC) {
